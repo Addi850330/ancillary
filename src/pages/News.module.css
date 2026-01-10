@@ -1,18 +1,60 @@
-/* --------news--------- */
 .newst {
   padding: 80px 0px 0px 10%;
   position: relative;
 }
-.newst .bgc {
-  background-color: rgba(199, 210, 255, 0.51);
+.newst .gbcliner {
   width: 100%;
   height: 100vh;
   position: fixed;
-  z-index: -1;
   top: 0px;
   left: 0px;
+  z-index: -1;
+  background: linear-gradient(
+    270deg,
+    rgba(78, 155, 240, 1) 0%,
+    rgba(86, 205, 234, 1) 45%,
+    rgba(84, 191, 236, 1) 72%,
+    rgba(77, 148, 241, 1) 100%
+  );
 }
-
+.newst .wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+.newst .background {
+  position: absolute;
+  background-color: rgba(92, 92, 92, 0);
+  inset: -40px; /* 關鍵：避免移動時露白邊 */
+  background-image: url("/images/bgc.png");
+  background-size: 10%;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+.newst .wrapperm {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+.newst .backgroundm {
+  position: absolute;
+  /* background-color: rgb(92, 92, 92); */
+  inset: -40px; /* 關鍵：避免移動時露白邊 */
+  background-image: url("/images/mask.png");
+  background-size: 10%;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
 .newst .newtitle {
   font-size: 70px;
   position: relative;
@@ -28,7 +70,6 @@
 }
 .newst .newtitle .fill.active {
   clip-path: ellipse(150% 120% at 100% 50%);
-  /* 這裡改scroll觸發 */
 }
 .newst .newsinfos {
   height: 80vh;

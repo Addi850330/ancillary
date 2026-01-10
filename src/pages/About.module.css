@@ -1,17 +1,129 @@
-.wrapper {
+.about {
   position: relative;
+}
+.about .wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  z-index: -1;
 }
 
-.background {
+.about .wrapper .background {
   position: absolute;
   background-color: aliceblue;
   inset: -40px; /* 關鍵：避免移動時露白邊 */
-  background-image: url("../../public/images/bgc.png");
+  background-image: url("/images/bgc.png");
   background-size: 10%;
   background-position: center;
   will-change: transform;
   transition: transform 0.05s linear;
+}
+.about .abtitle {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.about .abtitle .abbg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+.about .abtitle .abbg::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.526);
+}
+.about .abtitle .abbg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.about .abtitle .abtitlec {
+  font-size: 70px;
+  position: relative;
+  top: 80px;
+  left: 10%;
+  width: 320px;
+  color: #2f6bff;
+  pointer-events: none;
+}
+.about .abtitle .abtitlec .fill {
+  position: absolute;
+  inset: 0;
+  color: rgba(230, 230, 230, 1);
+  clip-path: ellipse(0% 120% at 0% 50%);
+  transition: clip-path 1.2s ease;
+}
+.about .abtitle .abtitlec .fill.active {
+  clip-path: ellipse(150% 120% at 100% 50%);
+}
+.about .abtitle .menu {
+  width: 350px;
+  height: 400px;
+  /* background-color: #2f6bff; */
+  margin-left: 10%;
+  margin-top: 80px;
+}
+.menu .menutext {
+  width: 100%;
+  border-bottom: 1.5px solid white;
+  font-size: 1.5rem;
+}
+.menu .mbtn {
+  width: 100%;
+  height: 2.5rem;
+  border-bottom: 1.5px solid white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.menu .mbtn .outside {
+  width: 100%;
+  position: absolute;
+  top: 0rem;
+}
+.menu .mbtn:hover .outside {
+  top: -2.5rem;
+  transition: 0.4s;
+}
+.menu .mbtn .outside .mtop {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.menu .mbtn .outside .mtop.hc {
+  color: #62d3ff;
+}
+.menu .mbtn .outside .mtop .mch {
+  font-size: 1.2rem;
+  display: flex;
+  /* background-color: red; */
+  width: 110px;
+  position: relative;
+}
+.menu .mbtn .outside .mtop .mch .mimg {
+  position: absolute;
+  top: 0px;
+  right: -5px;
+  width: 40px;
+  height: 40px;
+}
+.menu .mbtn .outside .mtop .mch .mimg img {
+  width: 100%;
+  height: 100%;
 }
