@@ -1,0 +1,1110 @@
+.carosal {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.carosal.cremove {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+.carosal .mask {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+.carosal .mask .bgms {
+  position: absolute;
+  opacity: 0;
+  inset: -40px; /* 關鍵：避免移動時露白邊 */
+  background-image: url("../../public/images/bgc.png");
+  background-size: 10%;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.05s linear;
+  z-index: 2;
+}
+.carosal .mask .bgms.active {
+  opacity: 0.7;
+}
+.carosal .mask .mk {
+  position: absolute;
+  bottom: 0px;
+  width: 25%;
+  height: 0vh;
+  background-color: white;
+  z-index: 2;
+  /* border: 1px solid red; */
+}
+.carosal .mask .mk:nth-child(1) {
+  left: 0%;
+  transition: 0.3s;
+}
+.carosal .mask .mk:nth-child(2) {
+  left: 25%;
+  transition: 0.5s;
+}
+.carosal .mask .mk:nth-child(3) {
+  left: 50%;
+  transition: 0.7s;
+}
+.carosal .mask .mk:nth-child(4) {
+  left: 75%;
+  transition: 0.9s;
+}
+.carosal .mask .mk.active {
+  height: 100vh;
+}
+.carosal .mask .mk.grays {
+  background-color: rgb(149, 149, 149);
+}
+.carosal .mask .mk.blacks {
+  background-color: black;
+}
+.covercontet {
+  width: 100%;
+  height: 100vh;
+}
+.carosal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.carosal .bgfirst {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.carosal .bgfirst.active {
+  animation-name: carousel;
+  animation-duration: 15s;
+}
+.carosal .bgfirst.remove {
+  transform: scale(1.1);
+}
+.carosal .bgfirst img {
+  width: 100%;
+  height: 100%;
+  object-position: center center;
+  object-fit: cover;
+  opacity: 0;
+  transition: 0.7s;
+}
+.carosal .bgfirst img.active {
+  opacity: 1;
+}
+.carosal .bgsecond {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.carosal .bgsecond.active {
+  animation-name: carousel;
+  animation-duration: 15s;
+}
+.carosal .bgsecond.remove {
+  transform: scale(1.1);
+}
+.carosal .bgsecond img {
+  width: 100%;
+  height: 100%;
+  object-position: center center;
+  object-fit: cover;
+  opacity: 0;
+  transition: 0.7s;
+}
+
+.carosal .bgsecond img.active {
+  opacity: 1;
+}
+.carosal .bgthird {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.carosal .bgthird.active {
+  animation-name: carousel;
+  animation-duration: 15s;
+}
+.carosal .bgthird.remove {
+  transform: scale(1.1);
+}
+.carosal .bgthird img {
+  width: 100%;
+  height: 100%;
+  object-position: center center;
+  object-fit: cover;
+  opacity: 0;
+  transition: 0.7s;
+}
+.carosal .bgthird img.active {
+  opacity: 1;
+}
+.carosal .bgforth {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.carosal .bgforth.active {
+  animation-name: carousel;
+  animation-duration: 15s;
+}
+.carosal .bgforth.remove {
+  transform: scale(1.1);
+}
+.carosal .bgforth img {
+  width: 100%;
+  height: 100%;
+  object-position: center center;
+  object-fit: cover;
+  opacity: 0;
+  transition: 0.7s;
+}
+
+.carosal .bgforth img.active {
+  opacity: 1;
+}
+
+@keyframes carousel {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.carosal .titles {
+  position: absolute;
+  width: 600px;
+  height: 155px;
+  top: 430px;
+  left: 10%;
+  overflow: hidden;
+  z-index: 2;
+  /* background-color: red; */
+}
+.carosal .titles .title {
+  position: absolute;
+  width: 100%;
+  line-height: 2rem;
+  top: 10px;
+  left: 100%;
+  opacity: 0;
+}
+/* .carosal .titles:hover .title {
+  transition: 0.5s;
+  left: 0%;
+} */
+.carosal .titles .title.active {
+  transition: 0.4s;
+  opacity: 1;
+  left: 0%;
+}
+.carosal .titles .title p:nth-child(1) {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+.carosal .titles .title p:nth-child(2) {
+  font-size: 36px;
+}
+.carosal .titles .title p:nth-child(3) {
+  font-size: 20px;
+}
+.carosal .titles .title p:nth-child(4) {
+  font-size: 20px;
+}
+/* .businesscards */
+.business {
+  position: relative;
+  /* background-color: rgb(52, 217, 104); */
+}
+.business .title {
+  width: 100%;
+  height: 80vh;
+  /* background-color: rgb(45, 215, 164); */
+  position: sticky;
+  top: 0px;
+}
+.business .title .titlefirst {
+  font-size: 64px;
+  /* background-color: red; */
+  width: 320px;
+  color: rgba(230, 230, 230, 1);
+  /* margin-left: 50px; */
+  position: relative;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.business .title .titlesecond {
+  font-size: 70px;
+  /* background-color: red; */
+  /* margin-left: 50px; */
+  position: relative;
+  width: 320px;
+  color: rgba(230, 230, 230, 1);
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.business .title .titlesecond .fill {
+  position: absolute;
+  inset: 0;
+  color: #2f6bff;
+  clip-path: ellipse(0% 120% at 0% 50%);
+  transition: clip-path 1.5s ease;
+}
+.business .title .titlesecond .fill.active {
+  clip-path: ellipse(150% 120% at 100% 50%);
+  /* 這裡改scroll觸發 */
+}
+
+.business .businesscards {
+  margin-bottom: 50px;
+  padding: 0 180px 150px 180px;
+}
+
+.business .businesscards .bcard {
+  width: 350px;
+  height: 220px;
+  background: linear-gradient(
+    181deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 100%,
+    rgba(186, 186, 186, 1) 100%
+  );
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.business .businesscards .bcard:nth-child(even) {
+  margin-left: auto;
+  margin-top: -50px;
+}
+.business .businesscards .bcard:hover {
+  height: 440px;
+}
+.business .businesscards .bcard .bigicon {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.4s;
+}
+.business .businesscards .bcard:hover .bigicon {
+  opacity: 1;
+}
+.business .businesscards .bcard .bigicon img {
+  width: 100%;
+  height: 100%;
+}
+.business .businesscards .bcard .innertext {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  top: 70px;
+}
+.business .businesscards .bcard .innertext p {
+  width: 70%;
+}
+.business .businesscards .bcard .bcimg {
+  width: 350px;
+  height: 220px;
+  position: absolute;
+  bottom: 0px;
+}
+.business .businesscards .bcard .bcimg img {
+  width: 350px;
+  height: 220px;
+}
+.business .businesscards .bcard .bcimg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 220px;
+  z-index: 1;
+  transition: 0.4s;
+  transition: 0.4s;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+.business .businesscards .bcard:hover .bcimg::before {
+  opacity: 0;
+}
+.business .businesscards .bcard .bcimg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 220px;
+  background: linear-gradient(
+    181deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 80%,
+    rgba(59, 144, 255, 1) 100%
+  );
+  z-index: 1;
+  transition: 0.4s;
+  opacity: 0;
+}
+.business .businesscards .bcard:hover .bcimg::after {
+  opacity: 1;
+}
+.business .businesscards .bcard .bctitle {
+  display: flex;
+  /* background-color: aqua; */
+  position: absolute;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  bottom: 20px;
+  z-index: 2;
+}
+.business .businesscards .bcard:hover .bctitle {
+  bottom: 370px;
+  transition: 0.4s;
+  justify-content: center;
+}
+.business .businesscards .bcard .bctitle .btcicon {
+  padding-top: 8px;
+  margin-left: 15px;
+  margin-right: 10px;
+  opacity: 1;
+  transition: 0.4s;
+}
+.business .businesscards .bcard:hover .bctitle .btcicon {
+  display: none;
+}
+.business .businesscards .bcard .bctitle .bctt {
+  font-size: 1.1rem;
+  color: black;
+  transition: 0.5s;
+}
+.business .businesscards .bcard:hover .bctitle .bctt {
+  color: white;
+  font-size: 1.2rem;
+}
+.survive {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+/* survive */
+.survive .survivetitle {
+  width: 100%;
+  height: 20vh;
+  padding: 0px 10%;
+}
+.survive .survivetitle .stitlefirst {
+  font-size: 64px;
+  /* background-color: red; */
+  width: 320px;
+  color: rgba(230, 230, 230, 1);
+  line-height: 1.5rem;
+  /* margin-left: 50px; */
+  margin-top: 10px;
+}
+.survive .survivetitle .stitlesecond {
+  font-size: 70px;
+  position: relative;
+  width: 320px;
+  color: rgba(230, 230, 230, 1);
+}
+.survive .survivetitle .stitlesecond .fill {
+  font-size: 70px;
+  position: absolute;
+  inset: 0;
+  color: #2f6bff;
+  clip-path: ellipse(0% 120% at 0% 50%);
+  transition: clip-path 1.2s ease;
+}
+.survive .survivetitle .stitlesecond .fill.active {
+  clip-path: ellipse(150% 120% at 100% 50%);
+}
+.survive .trre {
+  width: 80%;
+  height: 350px;
+  /* background-color: #2f6bff; */
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.survive .trre .trade {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(73, 73, 73, 1) 75%,
+    rgba(21, 21, 21, 1) 100%
+  );
+  background-size: 200% 100%;
+  background-position: 50% 0%;
+  transition: background-position 0.5s ease-in-out;
+  padding-left: 40px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.survive .trre .trade:hover {
+  background-position: -120% 0%;
+}
+.survive .trre .trade .trtitle {
+  font-size: 48px;
+  width: 85%;
+  margin-top: 20px;
+  opacity: 0.6;
+}
+.survive .trre .trade .trtitlech {
+  font-size: 24px;
+  width: 90%;
+}
+.survive .trre .trade .trinfo {
+  font-size: 20px;
+  width: 85%;
+  margin-top: 12px;
+}
+.survive .trre .trade .trbtn {
+  width: 80%;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 50px;
+}
+.survive .trre .trade .trbtn span {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(53, 130, 255, 0.541);
+  transition: 0.4s;
+}
+.survive .trre .trade:hover .trbtn span {
+  width: 100%;
+}
+.survive .trre .trade .trbtn .trbtntext {
+  position: absolute;
+  height: 100%;
+  font-size: 16px;
+  left: 20px;
+  line-height: 50px;
+  transition: 0.4s;
+}
+
+.survive .trre .trade .trbtn .trbtnlink {
+  position: absolute;
+  height: 100%;
+  font-size: 16px;
+  right: 20px;
+  line-height: 50px;
+  transition: 0.4s;
+}
+.survive .trre .trade:hover .trbtn .trbtnlink {
+  right: 70px;
+}
+.survive .trre .trade .trbtn .trbtnimg {
+  position: absolute;
+  right: 100px;
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
+  top: 5px;
+}
+.survive .trre .trade:hover .trbtn .trbtnimg {
+  right: 20px;
+}
+.survive .trre .trade .trbtn .trbtnimg img {
+  width: 100%;
+  height: 100%;
+}
+.survive .trre .trade .trcircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #2f6bff;
+  position: absolute;
+  overflow: hidden;
+  /* transform: scale(0); */
+  pointer-events: none;
+}
+.survive .trre .trade .trcircle::after {
+  content: "";
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.279);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.survive .trre .trade:hover .trcircle {
+  transition: transform 0.2s ease;
+}
+.survive .trre .trade .trcircle p {
+  position: absolute;
+  z-index: 2;
+  font-size: 20px;
+  line-height: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.survive .trre .trade .trcircle img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* ---------------- */
+.survive .trre .requirement {
+  background: linear-gradient(
+    270deg,
+    rgba(86, 205, 234, 1) 0%,
+    rgba(77, 148, 241, 1) 50%,
+    rgba(86, 205, 234, 1) 100%
+  );
+  background-size: 200% 100%; /* 背景宽度是元素宽度的200% */
+  background-position: 50% 0%; /* 初始位置 */
+  transition: background-position 0.5s ease-in-out; /* 动画效果 */
+}
+.survive .trre .requirement:hover {
+  background-position: -150% 0%; /* 移到最右边，颜色从左到右移动 */
+}
+.survive .trre .requirement .trbtn {
+  margin-top: 48px;
+}
+
+/* ------------stati---------------- */
+.survive .statistics {
+  width: 80%;
+  height: 250px;
+  background: linear-gradient(
+    270deg,
+    rgba(77, 148, 241, 1) 0%,
+    rgba(86, 205, 234, 1) 100%
+  );
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.4s;
+  padding-top: 30px;
+  overflow: hidden;
+}
+.survive .statistics .bgmask {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  inset: -40px;
+  width: 120%;
+  height: 120%;
+  background-image: url("/images/bgc.png");
+  background-size: 15%;
+  background-position: center;
+}
+.survive .statistics.allop {
+  height: 850px;
+}
+.survive .statistics .info {
+  /* background-color: red; */
+  width: 550px;
+  height: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 0.4s;
+  /* --toggle--- */
+  opacity: 0;
+  position: absolute;
+}
+.survive .statistics .info.active {
+  opacity: 1;
+}
+.survive .statistics .info.allop {
+  opacity: 1;
+  position: relative;
+}
+.survive .statistics .info .infoimg {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0px 50px;
+}
+.survive .statistics .info .infobgc {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.4s;
+}
+.survive .statistics .info .infobgc.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.survive .statistics .info .infobgc.allop {
+  transform: translate(-50%, -50%) scale(1);
+}
+.survive .statistics .info .infobgc img {
+  width: 100%;
+  height: 100%;
+  animation: rollbg 15s infinite linear;
+}
+
+@keyframes rollbg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.survive .statistics .info .infoicon {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.survive .statistics .info .infoicon img {
+  width: 100%;
+  height: 100%;
+}
+
+.survive .statistics .info .infodata .infoname {
+  font-size: 28px;
+}
+.survive .statistics .info .infodata .infovalue {
+  font-size: 36px;
+}
+
+.survive .statistics .statbtn {
+  border: 2px solid white;
+  width: 250px;
+  height: 50px;
+  position: absolute;
+  bottom: 30px;
+  right: 55px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.survive .statistics .statbtn span {
+  width: 0%;
+  height: 100%;
+  background-color: #2f6bff;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  transition: 0.4s;
+}
+.survive .statistics:hover .statbtn span {
+  width: 100%;
+}
+.survive .statistics .statbtn .sbicon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 100px;
+  transition: 0.4s;
+}
+.survive .statistics:hover .statbtn .sbicon {
+  right: 15px;
+}
+
+.survive .statistics .statbtn .sbicon img {
+  width: 100%;
+  left: 100%;
+  transition: 0.4s;
+}
+.survive .statistics:hover .statbtn .sbicon img {
+  transform: rotate(90deg);
+}
+.survive .statistics:hover .statbtn .sbicon.topstyle img {
+  transform: rotate(-90deg);
+}
+.survive .statistics .statbtn .opentext {
+  font-size: 16px;
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  line-height: 50px;
+  transition: 0.4s;
+}
+.survive .statistics:hover .statbtn .opentext {
+  right: 50px;
+}
+/* --------news--------- */
+.newst {
+  padding: 0px 0px 0px 10%;
+  position: relative;
+}
+.newst .newtitle {
+  font-size: 70px;
+  position: relative;
+  width: 320px;
+  color: rgba(230, 230, 230, 1);
+}
+.newst .newtitle .fill {
+  position: absolute;
+  inset: 0;
+  color: #2f6bff;
+  clip-path: ellipse(0% 120% at 0% 50%);
+  transition: clip-path 1.2s ease;
+}
+.newst .newtitle .fill.active {
+  clip-path: ellipse(150% 120% at 100% 50%);
+  /* 這裡改scroll觸發 */
+}
+.newst .newsinfos {
+  height: 80vh;
+  width: 85%;
+  margin-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1.5px solid white;
+  margin-bottom: 100px;
+}
+.newst .newsinfos .info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1.5px solid white;
+  cursor: pointer;
+  position: relative;
+}
+
+.newst .newsinfos .info .newtime {
+  font-size: 1.2rem;
+  width: 180px;
+  padding-left: 10px;
+  transition: 0.4s;
+}
+.newst .newsinfos .info:hover .newtime {
+  color: #2f6bff;
+}
+.newst .newsinfos .info .newtitle {
+  font-size: 1rem;
+  width: 180px;
+  padding: 5px;
+  background-color: rgb(188, 188, 188);
+  color: #2f6bff;
+  text-align: center;
+  border-radius: 16px;
+  margin-left: 25px;
+}
+.newst .newsinfos .info .newdesc {
+  font-size: 1rem;
+  width: 100%;
+  margin-left: 35px;
+  margin-right: 25px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  transition: 0.4s;
+}
+.newst .newsinfos .info:hover .newdesc {
+  color: #2f6bff;
+}
+.newst .newsinfos .info .nlicon {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 35px;
+  right: -10px;
+}
+.newst .newsinfos .info .nlicon img {
+  width: 100%;
+  height: 100%;
+}
+.newst .newssbtn {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  bottom: -80px;
+  border: none;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  transition: 0.4s;
+  font-size: 1.1rem;
+  font-family: "Anta";
+  cursor: pointer;
+}
+.newst .newssbtn:hover {
+  background-color: #2f6bff;
+}
+.textanime {
+  width: 100%;
+  height: 150px;
+  /* background-color: aqua; */
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(158, 158, 158, 0.222);
+}
+.textanime .textc {
+  font-size: 8rem;
+  transform: translateX(0);
+}
+.textanime .txanime {
+  animation: marquee 10s linear infinite;
+}
+.textanime .mousecircle {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(28, 28, 28, 0.595);
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  border: 1px solid white;
+  pointer-events: none;
+  top: 0px;
+}
+.textanime:hover .mousecircle {
+  transition: transform 0.2s ease;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* rwd */
+@media (max-width: 1084px) {
+  .business .businesscards {
+    padding: 0 100px 150px 100px;
+  }
+}
+@media (max-width: 980px) {
+  .business .businesscards {
+    padding: 0 70px 150px 70px;
+  }
+  .business .businesscards .bcard {
+    width: 300px;
+  }
+  .business .businesscards .bcard:hover {
+    height: 400px;
+  }
+  .business .businesscards .bcard:hover .bctitle {
+    bottom: 330px;
+  }
+}
+@media (max-width: 900px) {
+  .survive .trre .trade .trtitle {
+    font-size: 36px;
+  }
+  .survive .trre .trade .trtitlech {
+    font-size: 20px;
+  }
+  .survive .trre .trade .trinfo {
+    font-size: 16px;
+  }
+}
+@media (max-width: 778px) {
+  .business .title .titlefirst {
+    top: 70px;
+    left: 40%;
+  }
+  .business .title .titlesecond {
+    top: 30px;
+    left: 40%;
+  }
+  .business .businesscards .bcard {
+    margin-left: auto;
+    margin-bottom: 100px;
+    height: 400px;
+    position: sticky;
+    top: 100px;
+  }
+  .business .businesscards .bcard:nth-child(even) {
+    margin-top: 0px;
+  }
+  .business .businesscards .bcard .bigicon {
+    opacity: 1;
+  }
+  .business .businesscards .bcard .bcimg {
+    height: 200px;
+  }
+
+  .business .businesscards .bcard .bcimg::before {
+    opacity: 0;
+  }
+  .business .businesscards .bcard .bcimg::after {
+    opacity: 1;
+  }
+  .business .businesscards .bcard .bctitle {
+    bottom: 330px;
+    transition: 0.4s;
+    justify-content: center;
+  }
+  .business .businesscards .bcard .bctitle .btcicon {
+    display: none;
+  }
+  .business .businesscards .bcard .bctitle .bctt {
+    color: white;
+    font-size: 1.2rem;
+  }
+  .survive .trre {
+    flex-direction: column;
+    height: 700px;
+    align-items: center;
+  }
+  .survive .trre .trade {
+    width: 85%;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .survive .trre .trade .trbtn {
+    width: 50%;
+    right: 50px;
+    overflow: hidden;
+  }
+  .survive .statistics {
+    width: 75%;
+  }
+}
+@media (max-width: 700px) {
+  .carosal .titles {
+    width: 500px;
+  }
+  .carosal .titles .title p:nth-child(1) {
+    font-size: 2rem;
+  }
+  .carosal .titles .title p:nth-child(2) {
+    font-size: 30px;
+  }
+  .carosal .titles .title p:nth-child(3) {
+    font-size: 15px;
+  }
+  .carosal .titles .title p:nth-child(4) {
+    font-size: 15px;
+  }
+  .survive .statistics .info {
+    width: 450px;
+  }
+  .survive .statistics .info .infoimg {
+    margin: 0px 20px;
+  }
+  .survive .statistics .info .infobgc {
+    width: 80px;
+    height: 80px;
+  }
+  .survive .statistics .info .infoicon {
+    width: 50px;
+    height: 50px;
+  }
+  .survive .statistics .info .infodata .infoname {
+    font-size: 20px;
+  }
+  .survive .statistics .info .infodata .infovalue {
+    font-size: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .carosal .titles {
+    width: 370px;
+    left: 5%;
+  }
+  .carosal .titles .title p:nth-child(1) {
+    font-size: 1.5rem;
+  }
+  .carosal .titles .title p:nth-child(2) {
+    font-size: 25px;
+  }
+  .carosal .titles .title p:nth-child(3) {
+    font-size: 15px;
+  }
+  .carosal .titles .title p:nth-child(4) {
+    font-size: 15px;
+  }
+  .newst .newsinfos {
+    margin-left: 0px;
+  }
+  .newst .newsinfos .info .newtime {
+    font-size: 1.1rem;
+  }
+  .newst .newsinfos .info .newtitle {
+    font-size: 0.9rem;
+    margin-left: 15px;
+  }
+  .newst .newsinfos .info .newdesc {
+    font-size: 0.9rem;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+  .survive .statistics .info .infoimg {
+    margin: 0px 10px;
+  }
+  .survive .statistics .info .infodata .infoname {
+    font-size: 16px;
+  }
+  .survive .statistics .info .infodata .infovalue {
+    font-size: 20px;
+  }
+}
+@media (max-width: 550px) {
+  .survive .statistics .statbtn {
+    right: 25px;
+    width: 200px;
+  }
+  .newst .newsinfos .info .newtime {
+    font-size: 0.9rem;
+  }
+  .newst .newsinfos .info .newtitle {
+    font-size: 0.85rem;
+  }
+  .newst .newsinfos .info .newdesc {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 442px) {
+  .business .businesscards {
+    padding: 0 40px 150px 0px;
+  }
+  .survive .survivetitle {
+    padding: 0px 5%;
+  }
+  .survive .statistics .info .infoimg {
+    width: 100px;
+    height: 100px;
+    margin: 0px;
+  }
+}

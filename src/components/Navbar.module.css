@@ -1,0 +1,434 @@
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.236);
+}
+.nav.active {
+  background-color: rgba(255, 255, 255, 0.49);
+  transition: 1s;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.nav.blacks {
+  border-bottom: 1px solid white;
+}
+.nav .logo {
+  display: flex;
+  margin-left: 20px;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
+}
+.nav .logo.hide {
+  opacity: 0;
+}
+.nav .logo .logoimgs {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.nav .logo .firimg {
+  opacity: 1;
+  transition: 0.4s;
+}
+.nav .logo .firimg.active {
+  opacity: 0;
+}
+.nav .logo .secimg {
+  opacity: 0;
+  transition: 0.4s;
+}
+.nav .logo .secimg.active {
+  opacity: 1;
+}
+.nav .logo .logoimgs img {
+  position: absolute;
+}
+.nav .logo .logotext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  transition: 0.4s;
+}
+.nav .logo .logotext.active {
+  color: #184e9a;
+}
+.nav .logo .logotext.blacks {
+  color: white;
+}
+.nav .logo .logotext p {
+  margin: 0px;
+}
+.nav .navlinks {
+  width: 550px;
+  display: flex;
+  justify-content: flex-start;
+  /* margin-right: 20px; */
+}
+.nav .navlinks .nl {
+  margin-left: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.nav .navlinks .nl .nltc {
+  font-family: "TaipeiSansTC";
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 5px;
+  /* background-color: red; */
+  position: relative;
+  overflow: hidden;
+  width: 64px;
+  height: 16px;
+}
+.nav .navlinks .nl .nltc .nta {
+  position: absolute;
+  width: 64px;
+  height: 32px;
+  top: 0%;
+  color: white;
+  transition: 0.4s;
+}
+.nav .navlinks .nl .nltc .nta.active {
+  color: black;
+}
+.nav .navlinks .nl .nltc .nta.blacks {
+  color: white;
+}
+.nav .navlinks .nl:hover .nltc div {
+  transition: 0.4s;
+  top: -100%;
+}
+.nav .navlinks .nl .nlte {
+  font-family: "Anta";
+  font-size: 10px;
+  font-weight: normal;
+  transition: 0.4s;
+}
+.nav .navlinks .nl .nlte.active {
+  color: black;
+}
+.nav .navlinks .nl .nlte.blacks {
+  color: white;
+}
+.nav .navlinks .nl:hover .nlte {
+  color: #639ef3;
+  transition: 0.3s;
+}
+.nav .navlinks .buger {
+  width: 35px;
+  height: 40px;
+  border: none;
+  position: relative;
+  background: none;
+  cursor: pointer;
+  display: none;
+  opacity: 1;
+  transition: 0.4s;
+}
+.nav .navlinks .buger.active {
+  opacity: 0;
+}
+.nav .navlinks .buger span {
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  background-color: white;
+}
+.nav .navlinks .buger:hover span {
+  opacity: 0.7;
+}
+.nav .navlinks .buger .topline {
+  top: 8px;
+  left: 0px;
+  transition: 0.3s;
+}
+.nav .navlinks .buger .topline.active {
+  top: 19px;
+}
+.nav .navlinks .buger .middleline {
+  top: 19px;
+  left: 0px;
+  transition: 0.3s;
+}
+.nav .navlinks .buger .bottomline {
+  bottom: 8px;
+  left: 0px;
+  transition: 0.3s;
+}
+.nav .navlinks .buger .bottomline.active {
+  bottom: 19px;
+}
+.nav .navlinks .account {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-left: 2px solid white;
+  padding-left: 20px;
+}
+.nav .navlinks .account.active {
+  border-left: 2px solid rgb(0, 0, 0);
+}
+.nav .navlinks .account.blacks {
+  border-left: 2px solid white;
+}
+.nav .navlinks .account button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav .navlinks .account button:hover {
+  opacity: 0.6;
+  transition: 0.3s;
+}
+.nav .navlinks .account button img {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.nav .navlinks .account button img.active {
+  display: block;
+}
+.nav .navlinks .account button img.blacks {
+  display: block;
+}
+.nav .navlinks .account button img.black {
+  display: none;
+}
+.hidenavst {
+  position: fixed;
+  width: 90%;
+  height: 85vh;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  /* background-color: rgba(0, 0, 0, 0.651); */
+  border-radius: 30px;
+  /* border: 1px solid red; */
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 10;
+}
+.hidenavst.active {
+  visibility: inherit;
+}
+.hidenavst .blackbg {
+  width: 100%;
+  height: 0%;
+  background-color: rgba(22, 27, 42, 0.88);
+  transition: 0.4s;
+  opacity: 0;
+}
+.hidenavst .blackbg.active {
+  height: 100%;
+  opacity: 1;
+}
+.hidenavst .logobtn {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hidenavst .logobtn.active {
+  opacity: 1;
+  transition: 0.4s;
+}
+.hidenavst .logobtn .hidelogo {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+.hidenavst .logobtn .hidelogo .hlimg {
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+}
+.hidenavst .logobtn .hidelogo .hlimg img {
+  width: 100%;
+  height: 100%;
+}
+.hidenavst .logobtn .hidelogo .hltitle {
+  font-size: 16px;
+}
+.hidenavst .logobtn .closebtn {
+  width: 30px;
+  height: 30px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.hidenavst .logobtn .closebtn img {
+  width: 100%;
+  height: 100%;
+}
+.hidenavst .innerlinks {
+  position: absolute;
+  top: 90px;
+  left: 100px;
+  width: 100%;
+  opacity: 0;
+}
+.hidenavst .innerlinks.active {
+  transition: 0.4s;
+  opacity: 1;
+}
+.hidenavst .innerlinks .hnl {
+  cursor: pointer;
+  margin-bottom: 23px;
+  width: 120px;
+  /* background-color: #639ef3; */
+}
+.hidenavst .innerlinks .hnl .hnle {
+  font-size: 24px;
+  margin: 0px;
+  line-height: 18px;
+  height: 18px;
+  /* background-color: rebeccapurple; */
+  position: relative;
+  overflow: hidden;
+}
+.hidenavst .innerlinks .hnl .hnle .htlet {
+  position: absolute;
+  top: 0%;
+}
+.hidenavst .innerlinks .hnl .hnlc {
+  font-size: 16px;
+  margin: 0px;
+  font-family: "TaipeiSansTC";
+  transition: 0.4s;
+}
+.hidenavst .innerlinks .hnl:hover .hnle .htlet {
+  top: -100%;
+  transition: 0.4s;
+}
+.hidenavst .innerlinks .hnl:hover .hnlc {
+  color: #639ef3;
+}
+.hidenavst .innerlinks .hnlot {
+  margin-bottom: 23px;
+  width: 120px;
+}
+
+.hidenavst .innerlinks .hnlot .otlink {
+  cursor: pointer;
+  margin-bottom: 5px;
+  width: 260px;
+  /* background-color: #639ef3; */
+}
+.hidenavst .innerlinks .hnlot .otlink span {
+  color: rgb(27, 140, 229);
+}
+.hidenavst .footer {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  opacity: 0;
+}
+.hidenavst .footer.active {
+  transition: 0.5s;
+  opacity: 1;
+}
+.hidenavst .footer::after {
+  content: "";
+  width: 90%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+.hidenavst .footer div {
+  margin-right: 40px;
+  font-size: 12px;
+}
+.hidenavst .footer .officeinfo {
+  margin-bottom: 5px;
+}
+
+.hidenavst .footer .authorize {
+  margin-top: 5px;
+}
+.hidenavst .footer .authorize .webdesign {
+  cursor: pointer;
+}
+/* 800 */
+/* @media (max-width: 1800px) {
+  .nav .navlinks {
+    width: 120px;
+  }
+  .nav .navlinks .nl {
+    display: none;
+  }
+  .nav .navlinks .buger {
+    display: flex;
+  }
+} */
+@media (max-width: 800px) {
+  .nav .navlinks {
+    width: 120px;
+  }
+  .nav .navlinks .nl {
+    display: none;
+  }
+  .nav .navlinks .buger {
+    display: flex;
+  }
+  .hidenavst .footer::after {
+    width: 85%;
+  }
+}
+@media (max-width: 700px) {
+  .hidenavst .innerlinks {
+    top: 80px;
+  }
+  .hidenavst .footer div {
+    margin-right: 30px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 500px) {
+  .hidenavst .innerlinks {
+    left: 70px;
+  }
+  .hidenavst .footer::after {
+    width: 80%;
+  }
+}
+@media (max-width: 410px) {
+  .hidenavst .footer::after {
+    left: 40px;
+    width: 75%;
+  }
+  .hidenavst .footer div {
+    margin-right: 20px;
+    font-size: 10px;
+  }
+  .hidenavst .footer .officeinfo {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .hidenavst .footer .authorize {
+    margin-top: 0px;
+  }
+}

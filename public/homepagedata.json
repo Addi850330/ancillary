@@ -1,0 +1,47 @@
+[
+  {
+    "info_ID": 1,
+    "infoiconUrl": "./images/stat/st1.svg",
+    "infoname": "總交易容量",
+    "infovalue": 237.1,
+    "infounit": "MW",
+    "infovaluemin": 221.1,
+    "infovalueplus": 0.1
+  },
+  {
+    "info_ID": 2,
+    "infoiconUrl": "./images/stat/st2.svg",
+    "infoname": "即時備轉交易容量",
+    "infovalue": 47.4,
+    "infounit": "MW",
+    "infovaluemin": 45.1,
+    "infovalueplus": 0.1
+  },
+  {
+    "info_ID": 3,
+    "infoiconUrl": "./images/stat/st3.svg",
+    "infoname": "補充備轉交易容量",
+    "infovalue": 189.7,
+    "infounit": "MW",
+    "infovaluemin": 184.2,
+    "infovalueplus": 0.1
+  },
+  {
+    "info_ID": 4,
+    "infoiconUrl": "./images/stat/st4.svg",
+    "infoname": "累計轉供度數",
+    "infovalue": 9950000,
+    "infounit": "度",
+    "infovaluemin": 9949981,
+    "infovalueplus": 1
+  },
+  {
+    "info_ID": 5,
+    "infoiconUrl": "./images/stat/st5.svg",
+    "infoname": "累績再生能源憑證交易量",
+    "infovalue": 9950,
+    "infounit": "張",
+    "infovaluemin": 9941,
+    "infovalueplus": 1
+  }
+]
