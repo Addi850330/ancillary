@@ -392,7 +392,7 @@
 }
 .about .milestone .mitime .milestoneset {
   cursor: pointer;
-  margin-right: 200px;
+  margin-right: 100px;
 }
 .about .milestone .mitime .milestoneset .year {
   text-align: right;
@@ -426,4 +426,126 @@
 .about .milestone .mitime .milestoneset .evens .even .eveninfo {
   font-size: 1.2rem;
   margin-bottom: 20px;
+}
+@media (max-width: 1140px) {
+  .about .company .companyinfo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about .company .companyinfo .ciright {
+    margin: 80px 50px 0px 50px;
+  }
+  .about .partner .teaminfo {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .about .partner .teaminfo .teamleft {
+    margin: 80px 50px 0px 50px;
+  }
+}
+@media (max-width: 1040px) {
+  .about .abtitle .asvideo {
+    right: 75px;
+  }
+}
+@media (max-width: 940px) {
+  .about .abtitle .asvideo {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .about .pris .prisimgs {
+    flex-direction: column;
+  }
+  .about .milestone .mitime .milestoneset {
+    margin-right: 10%;
+  }
+}
+@media (max-width: 600px) {
+  .about .pris .pristitle {
+    font-size: 35px;
+  }
+  .about .pris .pristitlech {
+    font-size: 24px;
+  }
+  .about .company .companyinfo {
+    margin: 80px 10% 50px 5%;
+  }
+  .about .company .companyinfo .ciright {
+    margin: 80px 20px 0px 20px;
+  }
+  .about .company .companyinfo .cileft .citafter {
+    top: 150px;
+    right: -25px;
+  }
+  .about .company .companyinfo .cileft .leftimg {
+    width: 300px;
+    height: 225px;
+  }
+  .about .company .companyinfo .cileft .cibefor {
+    top: 150px;
+    right: -25px;
+  }
+  .about .company .companyinfo .ciright .subtitle {
+    font-size: 1.4rem;
+  }
+  .about .partner .teaminfo {
+    margin: 80px 10% 50px 5%;
+  }
+  .about .partner .teaminfo .teamright {
+    margin: 80px 20px 0px 20px;
+  }
+  .about .partner .teaminfo .teamright .textafter {
+    top: 150px;
+    left: -20px;
+  }
+  .about .partner .teaminfo .teamright .teamimg {
+    width: 300px;
+    height: 225px;
+  }
+  .about .partner .teaminfo .teamright .textbefroe {
+    top: 150px;
+    left: -20px;
+  }
+  .about .partner .teaminfo .teamleft {
+    margin: 80px 20px 0px 20px;
+  }
+}
+@media (max-width: 400px) {
+  .about .abtitle .menu {
+    margin-left: 5%;
+  }
+  .about .company .companyinfo .ciright {
+    margin: 80px 10px 0px 10px;
+  }
+  .about .partner .teaminfo .teamleft {
+    margin: 80px 10px 0px 10px;
+  }
+  .about .milestone .mitime {
+    margin-left: 0px;
+  }
+  .about .milestone .mitime .milestoneset {
+    margin-right: 0px;
+  }
+}
+.ontopbtn {
+  width: 50px;
+  height: 50px;
+  background-color: #2f6bff;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.ontopbtn:hover {
+  transform: translateY(-10px);
+}
+.ontopbtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }

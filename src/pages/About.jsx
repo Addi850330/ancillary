@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./About.module.css";
 const About = () => {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -35,6 +35,54 @@ const About = () => {
   }, []); // 空依賴 → 只在初次渲染執行一次
 
   // -------------------------------------------------------
+  const [activeSection, setActiveSection] = useState("");
+
+  const companyRef = useRef(null);
+  const partnerRef = useRef(null);
+  const milestoneRef = useRef(null);
+
+  const scrollTo = (ref) => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth", // 平滑滾動
+      block: "start", // 對齊到頂部
+    });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.dataset.section);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.4, // 進入 40% 視窗就算
+      }
+    );
+
+    observer.observe(companyRef.current);
+    observer.observe(partnerRef.current);
+    observer.observe(milestoneRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // useEffect(() => {
+  //   console.log(activeSection);
+  // }, [activeSection]);
+  // -------------------------------------
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // -------------------------
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -77,7 +125,7 @@ const About = () => {
           </div>
           <div className={styles.menu}>
             <div className={styles.menutext}>Menu</div>
-            <div className={styles.mbtn}>
+            <div className={styles.mbtn} onClick={() => scrollTo(companyRef)}>
               <div className={styles.outside}>
                 <div className={styles.mtop}>
                   <p>Company</p>
@@ -99,7 +147,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.mbtn}>
+            <div className={styles.mbtn} onClick={() => scrollTo(partnerRef)}>
               <div className={styles.outside}>
                 <div className={styles.mtop}>
                   <p>Partners</p>
@@ -121,7 +169,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.mbtn}>
+            <div className={styles.mbtn} onClick={() => scrollTo(milestoneRef)}>
               <div className={styles.outside}>
                 <div className={styles.mtop}>
                   <p>Milestone</p>
@@ -156,19 +204,21 @@ const About = () => {
             />
           </div>
         </div>
-        <div className={styles.company}>
+        <div ref={companyRef} data-section="company" className={styles.company}>
           <div className={styles.companytitle}>
             Company
             <span
               className={`${styles.fill} ${
-                textstatus === "open" ? styles.active : ""
+                activeSection === "company" ? styles.active : ""
               }`}
             >
               Company
             </span>
           </div>
           <div className={styles.ctch}>
-            <p className={`${textstatus === "open" ? styles.active : ""}`}>
+            <p
+              className={`${activeSection === "company" ? styles.active : ""}`}
+            >
               公司簡介
             </p>
           </div>
@@ -190,19 +240,21 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className={styles.partner}>
+        <div ref={partnerRef} data-section="partner" className={styles.partner}>
           <div className={styles.partnertitle}>
             Partners
             <span
               className={`${styles.fill} ${
-                textstatus === "open" ? styles.active : ""
+                activeSection === "partner" ? styles.active : ""
               }`}
             >
               Partners
             </span>
           </div>
           <div className={styles.pnch}>
-            <p className={`${textstatus === "open" ? styles.active : ""}`}>
+            <p
+              className={`${activeSection === "partner" ? styles.active : ""}`}
+            >
               合作夥伴
             </p>
           </div>
@@ -236,19 +288,27 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className={styles.milestone}>
+        <div
+          ref={milestoneRef}
+          data-section="milestone"
+          className={styles.milestone}
+        >
           <div className={styles.milestonetitle}>
             Milestone
             <span
               className={`${styles.fill} ${
-                textstatus === "open" ? styles.active : ""
+                activeSection === "milestone" ? styles.active : ""
               }`}
             >
               Milestone
             </span>
           </div>
           <div className={styles.mich}>
-            <p className={`${textstatus === "open" ? styles.active : ""}`}>
+            <p
+              className={`${
+                activeSection === "milestone" ? styles.active : ""
+              }`}
+            >
               里程碑
             </p>
           </div>
@@ -270,7 +330,6 @@ const About = () => {
           <div className={styles.mitime}>
             {data.map((item) => {
               const isOpen = openId === item.new_ID;
-
               return (
                 <div
                   className={styles.milestoneset}
@@ -300,6 +359,9 @@ const About = () => {
           </div>
         </div>
       </section>
+      <button onClick={scrollToTop} className={styles.ontopbtn}>
+        <img src="./images/about/up.svg" alt="icon" />
+      </button>
     </>
   );
 };
