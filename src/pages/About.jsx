@@ -129,6 +129,87 @@ const About = () => {
             </div>
           </div>
         </div>
+        <div className={styles.company}>
+          <div className={styles.companytitle}>
+            Company
+            <span
+              className={`${styles.fill} ${
+                textstatus === "open" ? styles.active : ""
+              }`}
+            >
+              Company
+            </span>
+          </div>
+          <div className={styles.ctch}>
+            <p className={`${textstatus === "open" ? styles.active : ""}`}>
+              公司簡介
+            </p>
+          </div>
+          <div className={styles.companyinfo}>
+            <div className={styles.cileft}>
+              <div className={styles.citafter}>Message</div>
+              <div className={styles.leftimg}>
+                <img src="./images/about/message.jpg" alt="message" />
+              </div>
+              <div className={styles.cibefor}>Message</div>
+            </div>
+            <div className={styles.ciright}>
+              <div className={styles.subtitle}>
+                安瑟樂威為國內首間民間電力合格交易者亦為可再生能源售電服務業者
+              </div>
+              <div className={styles.subinner}>
+                安瑟樂威打造多元分散式能源參與能源市場的中央入口技術和財務平台。安瑟樂威為具有豐富法規、資通光、大小機電、前瞻整合技術和物聯網商業模式的100%本土團隊。提供用電戶輔導、永續能源整體一站式解決方案，從設計、建置、維運和持續最佳化永續能源對策。提供ESCO財務模式，和客戶形成長期夥伴關係，讓用電戶能夠專注於本業，輕鬆快步邁向永續淨零。安瑟樂威提供的解決方案包含符合各種場域的能源管理系統、儲能、可再生能源、智慧微電網等多元能源應用，且其電力交易平台已與台電平台無縫接軌，提供用電戶參與台電電力交易平台及綠電交易市場所需要的整合方案。目前已輔導超過100MW以上之彈性電力參與市場，以及協助每年轉供近3億度綠電。
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.partner}>
+          <div className={styles.partnertitle}>
+            Partners
+            <span
+              className={`${styles.fill} ${
+                textstatus === "open" ? styles.active : ""
+              }`}
+            >
+              Partners
+            </span>
+          </div>
+          <div className={styles.pnch}>
+            <p className={`${textstatus === "open" ? styles.active : ""}`}>
+              合作夥伴
+            </p>
+          </div>
+          <div className={styles.teaminfo}>
+            <div className={styles.teamleft}>
+              <div className={styles.teamtitle}>
+                我們是國內最健全的輔助服務市場領銜專業團隊
+              </div>
+              <div className={styles.teaminfotext}>
+                集結國內產業界實務經驗豐富的專家，並與工業技術研究院、金屬工業研究中心和大同大學產學研合作，提供從用戶輔導、潛能評估、硬體設備、軟體平台建置、維運和可持續能源對策略調度的最佳化服務。亦具有儲能系統、可再生能源、智慧微電網設計、建置和維運的專業團隊，能提供參與輔助服務市場及綠電交易所有需求的一站式服務。
+              </div>
+            </div>
+            <div className={styles.teamright}>
+              <div className={styles.textafter}>Elite Team</div>
+              <div className={styles.teamimg}>
+                <img src="./images/about/Elite.jpg" alt="team" />
+              </div>
+              <div className={styles.textbefroe}>Elite Team</div>
+            </div>
+          </div>
+          <div className={styles.pris}>
+            <div className={styles.pristitle}>Partner Institutions</div>
+            <div className={styles.pristitlech}>合作企業</div>
+            <div className={styles.prisimgs}>
+              <div className={styles.pimg}>
+                <img src="./images/about/pri1.png" alt="pris" />
+              </div>
+              <div className={styles.pimg}>
+                <img src="./images/about/pri2.png" alt="pris" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.Milestone}></div>
       </section>
     </>
   );

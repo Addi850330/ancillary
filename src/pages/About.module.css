@@ -127,3 +127,211 @@
   width: 100%;
   height: 100%;
 }
+.about .company {
+  width: 100%;
+  /* height: 100vh; */
+}
+.about .company .companytitle {
+  font-size: 70px;
+  position: relative;
+  top: 80px;
+  left: 10%;
+  width: 320px;
+  color: rgba(230, 230, 230, 1);
+  pointer-events: none;
+}
+.about .company .companytitle .fill {
+  position: absolute;
+  inset: 0;
+  color: #2f6bff;
+  clip-path: ellipse(0% 120% at 0% 50%);
+  transition: clip-path 1.2s ease;
+}
+.about .company .companytitle .fill.active {
+  clip-path: ellipse(150% 120% at 100% 50%);
+}
+.about .company .ctch {
+  font-size: 30px;
+  height: 30px;
+  position: relative;
+  top: -45px;
+  left: 10%;
+  width: 320px;
+  color: #2f6bff;
+  pointer-events: none;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+.about .company .ctch p {
+  position: absolute;
+  top: 30px;
+  transition: 0.4s;
+}
+.about .company .ctch p.active {
+  top: -5px;
+}
+.about .company .companyinfo {
+  display: flex;
+  margin: 80px 10% 50px 10%;
+}
+.about .company .companyinfo .cileft {
+  position: relative;
+  z-index: 1;
+}
+.about .company .companyinfo .cileft .citafter {
+  color: black;
+  position: absolute;
+  font-size: 50px;
+  right: -75px;
+  top: 200px;
+  z-index: -1;
+}
+.about .company .companyinfo .cileft .leftimg {
+  width: 400px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.about .company .companyinfo .cileft .cibefor {
+  color: transparent;
+  -webkit-text-stroke: 1px #000000;
+  position: absolute;
+  font-size: 50px;
+  right: -75px;
+  top: 200px;
+  z-index: 2;
+}
+.about .company .companyinfo .cileft .leftimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about .company .companyinfo .ciright {
+  color: black;
+  margin-left: 120px;
+}
+.about .company .companyinfo .ciright .subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.about .company .companyinfo .ciright .subinner {
+  font-size: 1.1rem;
+}
+.about .partner {
+  width: 100%;
+}
+.about .partner .partnertitle {
+  font-size: 70px;
+  position: relative;
+  top: 80px;
+  left: 10%;
+  width: 320px;
+  color: rgba(230, 230, 230, 1);
+  pointer-events: none;
+}
+.about .partner .partnertitle .fill {
+  position: absolute;
+  inset: 0;
+  color: #2f6bff;
+  clip-path: ellipse(0% 120% at 0% 50%);
+  transition: clip-path 1.2s ease;
+}
+.about .partner .partnertitle .fill.active {
+  clip-path: ellipse(150% 120% at 100% 50%);
+}
+.about .partner .pnch {
+  font-size: 30px;
+  height: 30px;
+  position: relative;
+  top: -45px;
+  left: 10%;
+  width: 320px;
+  color: #2f6bff;
+  pointer-events: none;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+.about .partner .pnch p {
+  position: absolute;
+  top: 30px;
+  transition: 0.4s;
+}
+.about .partner .pnch p.active {
+  top: -5px;
+}
+.about .partner .teaminfo {
+  display: flex;
+  margin: 80px 10% 50px 10%;
+}
+.about .partner .teaminfo .teamleft {
+  color: black;
+}
+.about .partner .teaminfo .teamleft .teamtitle {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.about .partner .teaminfo .teamleft .teaminfotext {
+  font-size: 1.1rem;
+}
+.about .partner .teaminfo .teamright {
+  position: relative;
+  z-index: 1;
+  margin-left: 120px;
+}
+.about .partner .teaminfo .teamright .textafter {
+  color: black;
+  position: absolute;
+  font-size: 50px;
+  left: -75px;
+  top: 200px;
+  z-index: -1;
+}
+.about .partner .teaminfo .teamright .teamimg {
+  width: 400px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.about .partner .teaminfo .teamright .teamimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about .partner .teaminfo .teamright .textbefroe {
+  color: transparent;
+  -webkit-text-stroke: 1px #000000;
+  position: absolute;
+  font-size: 50px;
+  left: -75px;
+  top: 200px;
+  z-index: 2;
+}
+.about .pris {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+.about .pris .pristitle {
+  font-size: 50px;
+  color: black;
+}
+.about .pris .pristitlech {
+  font-size: 30px;
+  color: black;
+}
+.about .pris .prisimgs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+.about .pris .prisimgs .pimg {
+  width: 300px;
+  margin: 20px;
+}
+.about .pris .prisimgs .pimg img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
