@@ -5,6 +5,7 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const {
+    setSection,
     section,
     scrollState,
     setScrollState,
@@ -95,7 +96,10 @@ const Navbar = () => {
               NEWS
             </div>
           </button>
-          <button className={styles.nl}>
+          <button
+            className={styles.nl}
+            onClick={() => handleNavigate("/solution")}
+          >
             <div className={styles.nltc}>
               <div
                 className={`${styles.nta} ${
@@ -178,7 +182,7 @@ const Navbar = () => {
               scrollState === "open" ? styles.active : ""
             } ${activeSection === "four" ? styles.blacks : ""}`}
           >
-            <button className={styles.acfalse} onClick={covertest}>
+            <button className={styles.acfalse}>
               <img
                 className={`${scrollState === "close" ? styles.active : ""} ${
                   activeSection === "four" ? styles.blacks : ""

@@ -10,9 +10,9 @@ const Home = () => {
     setActiveSection,
   } = useSection();
 
-  useEffect(() => {
-    console.log(section);
-  }, [section]);
+  // useEffect(() => {
+  //   console.log(section);
+  // }, [section]);
 
   // ------------------
 

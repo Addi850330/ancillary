@@ -3,6 +3,7 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import News from "./pages/News";
 import About from "./pages/About";
+import Solution from "./pages/Solution";
 import { SectionProvider } from "./context/Context";
 // import './App.css'
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />{" "}
             <Route path="/news" element={<News />} />
+            <Route path="/solution" element={<Solution />} />
             <Route path="/about" element={<About />} />
           </Route>
         </Routes>
