@@ -34,6 +34,22 @@ const About = () => {
     return () => clearTimeout(timer);
   }, []); // 空依賴 → 只在初次渲染執行一次
 
+  // -------------------------------------------------------
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("/milestone.json")
+      .then((res) => res.json())
+      .then((json) => setData(json))
+      .catch((err) => console.error("milestone fetch error:", err));
+  }, []);
+
+  // -----------------------------------------------------------
+  const [openId, setOpenId] = useState(null);
+
+  const toggle = (id) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  };
   return (
     <>
       <section className={styles.about}>
@@ -128,6 +144,17 @@ const About = () => {
               </div>
             </div>
           </div>
+          <div className={styles.asvideo} style={{ aspectRatio: "16 / 10" }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/f4NJW9S47uo"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
         <div className={styles.company}>
           <div className={styles.companytitle}>
@@ -209,7 +236,69 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className={styles.Milestone}></div>
+        <div className={styles.milestone}>
+          <div className={styles.milestonetitle}>
+            Milestone
+            <span
+              className={`${styles.fill} ${
+                textstatus === "open" ? styles.active : ""
+              }`}
+            >
+              Milestone
+            </span>
+          </div>
+          <div className={styles.mich}>
+            <p className={`${textstatus === "open" ? styles.active : ""}`}>
+              里程碑
+            </p>
+          </div>
+          {/* <div className={styles.mitime}>
+            {data.map((item) => (
+              <div className={styles.milestoneset} key={item.new_ID}>
+                <div className={styles.year}>{item.year}</div>
+                <div className={styles.evens}>
+                  {item.milestone.map((m, index) => (
+                    <div className={styles.even} key={index}>
+                      <div className={styles.month}>{m.month}</div>
+                      <div className={styles.eveninfo}>{m.event}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div> */}
+          <div className={styles.mitime}>
+            {data.map((item) => {
+              const isOpen = openId === item.new_ID;
+
+              return (
+                <div
+                  className={styles.milestoneset}
+                  key={item.new_ID}
+                  onClick={() => toggle(item.new_ID)}
+                >
+                  <div className={styles.year}>
+                    <span>{isOpen ? "-" : "+"}</span>
+                    {item.year}
+                  </div>
+
+                  <div
+                    className={`${styles.evens} ${
+                      isOpen ? styles.open : styles.close
+                    }`}
+                  >
+                    {item.milestone.map((m, index) => (
+                      <div className={styles.even} key={index}>
+                        <div className={styles.month}>{m.month}</div>
+                        <div className={styles.eveninfo}>{m.event}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </section>
     </>
   );

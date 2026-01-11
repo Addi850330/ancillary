@@ -127,6 +127,12 @@
   width: 100%;
   height: 100%;
 }
+.about .abtitle .asvideo {
+  position: absolute;
+  width: 400px;
+  right: 150px;
+  top: 300px;
+}
 .about .company {
   width: 100%;
   /* height: 100vh; */
@@ -282,7 +288,7 @@
   color: black;
   position: absolute;
   font-size: 50px;
-  left: -75px;
+  left: -80px;
   top: 200px;
   z-index: -1;
 }
@@ -302,7 +308,7 @@
   -webkit-text-stroke: 1px #000000;
   position: absolute;
   font-size: 50px;
-  left: -75px;
+  left: -80px;
   top: 200px;
   z-index: 2;
 }
@@ -334,4 +340,90 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+.about .milestone {
+  width: 100%;
+}
+.about .milestone .milestonetitle {
+  font-size: 70px;
+  position: relative;
+  top: 80px;
+  left: 10%;
+  width: 320px;
+  color: rgba(230, 230, 230, 1);
+  pointer-events: none;
+}
+.about .milestone .milestonetitle .fill {
+  position: absolute;
+  inset: 0;
+  color: #2f6bff;
+  clip-path: ellipse(0% 120% at 0% 50%);
+  transition: clip-path 1.2s ease;
+}
+
+.about .milestone .milestonetitle .fill.active {
+  clip-path: ellipse(150% 120% at 100% 50%);
+}
+.about .milestone .mich {
+  font-size: 30px;
+  height: 30px;
+  position: relative;
+  top: -45px;
+  left: 10%;
+  width: 320px;
+  color: #2f6bff;
+  pointer-events: none;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+.about .milestone .mich p {
+  position: absolute;
+  top: 30px;
+  transition: 0.4s;
+}
+.about .milestone .mich p.active {
+  top: -5px;
+}
+.about .milestone .mitime {
+  margin-top: 80px;
+  color: black;
+  margin-left: 10%;
+  margin-bottom: 150px;
+}
+.about .milestone .mitime .milestoneset {
+  cursor: pointer;
+  margin-right: 200px;
+}
+.about .milestone .mitime .milestoneset .year {
+  text-align: right;
+  font-size: 40px;
+  border-bottom: 1.5px solid black;
+  position: relative;
+  padding-right: 30px;
+}
+.about .milestone .mitime .milestoneset .year:hover {
+  background-color: #000000;
+  color: white;
+  transition: 0.4s;
+}
+.about .milestone .mitime .milestoneset .year span {
+  position: absolute;
+  left: 30px;
+  top: 0px;
+}
+.about .milestone .mitime .milestoneset .evens {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+.about .milestone .mitime .milestoneset .evens.open {
+  max-height: 1000px; /* 大一點即可 */
+}
+.about .milestone .mitime .milestoneset .evens .even .month {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+.about .milestone .mitime .milestoneset .evens .even .eveninfo {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }

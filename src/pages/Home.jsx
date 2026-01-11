@@ -86,9 +86,9 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    console.log(activeSection);
-  }, [activeSection]);
+  // useEffect(() => {
+  //   console.log(activeSection);
+  // }, [activeSection]);
   // ------------------------------------------------
 
   const [pt, setPt] = useState(0);
@@ -180,9 +180,10 @@ const Home = () => {
 
     return () => clearInterval(timer);
   }, [stats.length]);
-  useEffect(() => {
-    console.log(pts);
-  }, [pts]);
+
+  // useEffect(() => {
+  //   console.log(pts);
+  // }, [pts]);
   // -------------------------------------
   const [newsdata, setNewsdata] = useState([]);
 

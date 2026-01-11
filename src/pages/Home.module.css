@@ -20,7 +20,7 @@
   position: absolute;
   opacity: 0;
   inset: -40px; /* 關鍵：避免移動時露白邊 */
-  background-image: url("../../public/images/bgc.png");
+  background-image: url("/images/bgc.png");
   background-size: 10%;
   background-position: center;
   will-change: transform;
