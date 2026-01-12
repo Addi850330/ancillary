@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSection } from "../context/Context";
 import styles from "./Navbar.module.css";
@@ -47,7 +48,8 @@ const Navbar = () => {
           scrollState === "open" ? styles.active : ""
         } ${activeSection === "four" ? styles.blacks : ""}`}
       >
-        <div
+        <Link
+          to={"/"}
           className={`${styles.logo} ${hidenav === "open" ? styles.hide : ""}`}
           onClick={() => handleNavigate("/")}
         >
@@ -75,9 +77,13 @@ const Navbar = () => {
             <p>Ancillary Power</p>
             <p>安瑟樂威</p>
           </div>
-        </div>
+        </Link>
         <div className={styles.navlinks}>
-          <button className={styles.nl} onClick={() => handleNavigate("/news")}>
+          <Link
+            to={"/news"}
+            className={styles.nl}
+            onClick={() => handleNavigate("/news")}
+          >
             <div className={styles.nltc}>
               <div
                 className={`${styles.nta} ${
@@ -95,8 +101,9 @@ const Navbar = () => {
             >
               NEWS
             </div>
-          </button>
-          <button
+          </Link>
+          <Link
+            to={"/solution"}
             className={styles.nl}
             onClick={() => handleNavigate("/solution")}
           >
@@ -117,8 +124,9 @@ const Navbar = () => {
             >
               SOLUTION
             </div>
-          </button>
-          <button
+          </Link>
+          <Link
+            to={"/about"}
             className={styles.nl}
             onClick={() => handleNavigate("/about")}
           >
@@ -139,8 +147,8 @@ const Navbar = () => {
             >
               ABOUT
             </div>
-          </button>
-          <button className={styles.nl}>
+          </Link>
+          <Link className={styles.nl}>
             <div className={styles.nltc}>
               <div
                 className={`${styles.nta} ${
@@ -158,7 +166,7 @@ const Navbar = () => {
             >
               CONTACT
             </div>
-          </button>
+          </Link>
           <button
             className={`${styles.buger} ${
               hidenav === "open" ? styles.active : ""

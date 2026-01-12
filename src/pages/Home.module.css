@@ -35,7 +35,7 @@
   bottom: 0px;
   width: 25%;
   height: 0vh;
-  background-color: white;
+  background-color: rgb(214, 214, 214);
   z-index: 2;
   /* border: 1px solid red; */
 }

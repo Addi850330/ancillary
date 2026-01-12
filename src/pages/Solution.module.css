@@ -1,4 +1,4 @@
-/* .gbcliner {
+.regbcliner {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -12,7 +12,7 @@
     rgba(84, 191, 236, 1) 72%,
     rgba(77, 148, 241, 1) 100%
   );
-} */
+}
 .gbcliner {
   width: 100%;
   height: 100vh;
@@ -588,6 +588,46 @@
 .textanime:hover .mousecircle {
   transition: transform 0.2s ease;
 }
+.cclinks {
+  position: fixed;
+  width: 40px;
+  height: 150px;
+  right: 0px;
+  writing-mode: vertical-lr;
+  top: 350px;
+  background-color: #0a1a42;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding-left: 10px;
+  text-decoration: none;
+  border-radius: 10px 0px 0px 10px;
+  transition: 0.4s;
+}
+.cclinks:hover {
+  color: rgb(255, 227, 12);
+}
+.ontopbtn {
+  width: 50px;
+  height: 50px;
+  background-color: #2f6bff;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.ontopbtn:hover {
+  transform: translateY(-10px);
+}
+.ontopbtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(100%);
@@ -596,6 +636,195 @@
     transform: translateX(-100%);
   }
 }
+/* --------------req----------------- */
+
+.requirement .companytitle {
+  font-size: 40px;
+  position: relative;
+  top: 80px;
+  left: 10%;
+  width: 350px;
+  color: #2f6bff;
+  pointer-events: none;
+}
+.requirement .companytitle .fill {
+  position: absolute;
+  inset: 0;
+  color: rgba(230, 230, 230, 1);
+  clip-path: ellipse(0% 120% at 0% 50%);
+  transition: clip-path 1.2s ease;
+}
+.requirement .companytitle .fill.active {
+  clip-path: ellipse(150% 120% at 100% 50%);
+}
+.requirement .ctch {
+  font-size: 30px;
+  height: 30px;
+  position: relative;
+  top: -75px;
+  left: 10%;
+  width: 320px;
+  color: rgba(230, 230, 230, 1);
+  pointer-events: none;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+.requirement .ctch p {
+  position: absolute;
+  top: 30px;
+  transition: 0.4s;
+}
+.requirement .ctch p.active {
+  top: -5px;
+}
+
+.reqlist {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 120px;
+}
+.reqlist .list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: rgba(17, 50, 133, 1);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(17, 50, 133, 1);
+  font-size: 1.5rem;
+}
+.reqlist .list.coset {
+  color: black;
+  height: 110px;
+  font-size: 1.2rem;
+}
+.reqlist .list .item {
+  width: 30%;
+}
+.reqlist .list .time {
+  width: 50%;
+}
+.planning .execution {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+.planning .execution .excc {
+  width: 150px;
+  height: 150px;
+  /* overflow: hidden; */
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+}
+
+.planning .execution .excc::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.258);
+  z-index: 1;
+}
+.planning .execution .excc img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+}
+.planning .execution .excc .exnum {
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  top: 5px;
+  left: 5px;
+  z-index: 2;
+}
+.planning .execution .excc .extext {
+  position: absolute;
+  font-size: 1.5rem;
+  width: 110px;
+  text-align: center;
+  bottom: -35px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 3;
+}
+.planning .execution .excc:nth-child(1) {
+  top: -100px;
+  left: -100px;
+  transition: 0.3s;
+}
+.planning .execution .excc:nth-child(2) {
+  top: -100px;
+  right: -100px;
+  transition: 0.5s;
+}
+.planning .execution .excc:nth-child(3) {
+  bottom: -100px;
+  left: -100px;
+  transition: 0.7s;
+}
+.planning .execution .excc:nth-child(4) {
+  bottom: -100px;
+  right: -100px;
+  transition: 0.9s;
+}
+.planning .execution .excc.active {
+  opacity: 1;
+}
+.planning .execution .exico {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.planning .execution .exico img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.planning .execution .exicon {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.planning .execution .exicon img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.planning .execution .exicons {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.planning .execution .exicons img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+/* -------rwd---------- */
 @media (max-width: 1020px) {
   .report .ciright {
     margin-left: 50px;
@@ -689,6 +918,26 @@
   .planning .scircle .ssinfos .ssinfo {
     font-size: 1.1rem;
   }
+  .planning .execution .excc {
+    width: 120px;
+    height: 120px;
+  }
+  .planning .execution .excc:nth-child(1) {
+    top: -50px;
+    left: -50px;
+  }
+  .planning .execution .excc:nth-child(2) {
+    top: -50px;
+    right: -50px;
+  }
+  .planning .execution .excc:nth-child(3) {
+    bottom: -50px;
+    left: -50px;
+  }
+  .planning .execution .excc:nth-child(4) {
+    bottom: -50px;
+    right: -50px;
+  }
 }
 @media (max-width: 434px) {
   .mright {
@@ -708,7 +957,7 @@
     top: 140px;
   }
   .planning {
-    height: 70vh;
+    height: 90vh;
   }
   .planning .pristitle {
     font-size: 30px;
@@ -782,5 +1031,11 @@
   }
   .pris .qas .qaan .ans {
     font-size: 20px;
+  }
+  .requirement .companytitle {
+    font-size: 35px;
+  }
+  .planning .execution {
+    margin-top: 80px;
   }
 }

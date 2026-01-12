@@ -35,6 +35,31 @@ const About = () => {
   }, []); // 空依賴 → 只在初次渲染執行一次
 
   // -------------------------------------------------------
+
+  const [circlecc, setCirclecc] = useState({
+    x: 0,
+    y: 0,
+    active: false,
+  });
+
+  const handleMouseMovecc = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    setCirclecc({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+      active: true,
+    });
+  };
+
+  const handleMouseLeavecc = () => {
+    setCirclecc((prev) => ({
+      ...prev,
+      active: false,
+    }));
+  };
+  // -------------------------------
+
   const [activeSection, setActiveSection] = useState("");
 
   const companyRef = useRef(null);
@@ -359,6 +384,25 @@ const About = () => {
           </div>
         </div>
       </section>
+      <div
+        className={styles.textanime}
+        onMouseMove={handleMouseMovecc}
+        onMouseLeave={handleMouseLeavecc}
+      >
+        <div className={`${styles.textc} ${styles.txanime}`}>Contact Us</div>
+        <div
+          className={styles.mousecircle}
+          style={{
+            left: `${circlecc.x}px`,
+            top: `${circlecc.y}px`,
+            transform: `translate(-50%, -50%) scale(${
+              circlecc.active ? 1 : 0
+            })`,
+          }}
+        >
+          Contact Us
+        </div>
+      </div>
       <button onClick={scrollToTop} className={styles.ontopbtn}>
         <img src="./images/about/up.svg" alt="icon" />
       </button>
