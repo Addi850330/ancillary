@@ -14,7 +14,7 @@ const Navbar = () => {
     setcstate,
   } = useSection();
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation(); // 取得當前路徑
 
   // 封裝通用跳轉邏輯

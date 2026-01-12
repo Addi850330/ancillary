@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useSection } from "../context/Context";
 import styles from "./Home.module.css";
 const Home = () => {
@@ -11,7 +11,19 @@ const Home = () => {
     setActiveSection,
     cstate,
     setcstate,
+    setSolustate,
   } = useSection();
+
+  const navigate = useNavigate();
+
+  const traset = () => {
+    setSolustate("tra");
+    setcstate("close");
+  };
+  const reqset = () => {
+    setSolustate("req");
+    setcstate("close");
+  };
 
   const [textstatus, setTextStatus] = useState("close");
 
@@ -501,6 +513,10 @@ const Home = () => {
             className={styles.trade}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            onClick={() => {
+              traset();
+              navigate("/solution");
+            }}
           >
             <div className={styles.trtitle}>Trade</div>
             <div className={styles.trtitlech}>參與電力交易平台</div>
@@ -533,6 +549,10 @@ const Home = () => {
             className={`${styles.trade} ${styles.requirement}`}
             onMouseMove={handleMouseMoveSec}
             onMouseLeave={handleMouseLeaveSec}
+            onClick={() => {
+              reqset();
+              navigate("/solution");
+            }}
           >
             <div className={styles.trtitle}>Requirement</div>
             <div className={styles.trtitlech}>

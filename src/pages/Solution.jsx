@@ -4,7 +4,8 @@ import { useSection } from "../context/Context";
 import styles from "./Solution.module.css";
 
 const Solution = () => {
-  const { setScrollState, cstate, setcstate } = useSection();
+  const { setScrollState, cstate, setcstate, solustate, setSolustate } =
+    useSection();
 
   const [textstatus, setTextStatus] = useState("close");
 
@@ -19,6 +20,14 @@ const Solution = () => {
     scrollToTop();
     setcstate("close");
     setScrollState("close");
+    if (solustate === "tra") {
+      sctrade();
+      setSolustate("");
+    }
+    if (solustate === "req") {
+      screquirement();
+      setSolustate("");
+    }
     setTimeout(() => {
       setcstate("open");
 
@@ -77,9 +86,9 @@ const Solution = () => {
 
   const [activeSection, setActiveSection] = useState("");
   const planning = useRef(null);
-  const pris = useRef(null);
-  const relist = useRef(null);
-  const execution = useRef(null);
+  // const pris = useRef(null);
+  // const relist = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -91,13 +100,13 @@ const Solution = () => {
       },
       {
         root: null,
-        threshold: 0.2, // 進入 42% 視窗就算
+        threshold: 0.5,
       }
     );
 
     observer.observe(planning.current);
-    observer.observe(pris.current);
-    observer.observe(relist.current);
+    // observer.observe(pris.current);
+    // observer.observe(relist.current);
 
     return () => observer.disconnect();
   }, []);
@@ -117,7 +126,7 @@ const Solution = () => {
         behavior: "smooth",
         block: "start",
       });
-    }, 1000);
+    }, 1500);
   };
 
   const screquirement = () => {
@@ -129,7 +138,7 @@ const Solution = () => {
         behavior: "smooth",
         block: "start",
       });
-    }, 1000);
+    }, 1500);
   };
 
   // --------------------------------------
@@ -343,7 +352,7 @@ const Solution = () => {
               </div>
             </div>
           </div>
-          <div className={styles.relist} ref={relist} data-section="relist">
+          <div className={styles.relist}>
             <div className={styles.list}>
               <div className={styles.item}>產品項目</div>
               <div className={styles.time}>反應時間</div>
@@ -524,7 +533,7 @@ const Solution = () => {
               </div>
             </div>
           </div>
-          <div className={styles.pris} ref={pris} data-section="pris">
+          <div className={styles.pris}>
             <div className={styles.pristitle}>FAQ</div>
             <div className={styles.pristitlech}>常見問題</div>
             <div className={styles.qas}>
@@ -563,6 +572,9 @@ const Solution = () => {
               </div>
             </div>
           </div>
+          <button className={styles.changreqtra} onClick={screquirement}>
+            綠電交易需求
+          </button>
         </section>
       )}
       {sectionChange === "requirement" && (
@@ -614,11 +626,7 @@ const Solution = () => {
               </div>
             </div>
           </div>
-          <div
-            className={styles.planning}
-            ref={execution}
-            data-section="execution"
-          >
+          <div className={styles.planning} data-section="execution">
             <div className={styles.pristitle}>Planning & Execution</div>
             <div className={styles.pristitlech}>安瑟樂威協助規劃流程</div>
             <div className={styles.execution}>
@@ -687,6 +695,9 @@ const Solution = () => {
               </div>
             </div>
           </div>
+          <button className={styles.changreqtra} onClick={sctrade}>
+            參與電力交易平台
+          </button>
         </section>
       )}
       <div

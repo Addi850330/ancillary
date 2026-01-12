@@ -636,6 +636,24 @@
     transform: translateX(-100%);
   }
 }
+.changreqtra {
+  height: 50px;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  background-color: black;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.changreqtra:hover {
+  background-color: white;
+  color: black;
+}
 /* --------------req----------------- */
 
 .requirement .companytitle {
