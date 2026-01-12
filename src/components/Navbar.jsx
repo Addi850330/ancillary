@@ -11,27 +11,19 @@ const Navbar = () => {
     scrollState,
     setScrollState,
     activeSection,
-    setActiveSection,
+    setcstate,
   } = useSection();
 
-  const covertest = () => {
-    if (section === "close") {
-      setSection("open");
-    }
-    if (section === "open") {
-      setSection("close");
-    }
-  };
-
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const location = useLocation(); // 取得當前路徑
 
   // 封裝通用跳轉邏輯
   const handleNavigate = (path) => {
     if (location.pathname === path) {
+      setcstate("open");
       return; // 如果是當前頁面，直接 return，不動作
     }
-    navigate(path);
+    setcstate("close");
   };
 
   const [hidenav, setHidenav] = useState("close");
@@ -148,7 +140,7 @@ const Navbar = () => {
               ABOUT
             </div>
           </Link>
-          <Link className={styles.nl}>
+          <Link to={"/contact"} className={styles.nl}>
             <div className={styles.nltc}>
               <div
                 className={`${styles.nta} ${

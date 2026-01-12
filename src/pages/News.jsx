@@ -1,6 +1,37 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSection } from "../context/Context";
 import styles from "./News.module.css";
 const News = () => {
+  // -----------開場------
+  const { setScrollState, cstate, setcstate } = useSection();
+
+  const [textstatus, setTextStatus] = useState("close");
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const openpage = () => {
+    scrollToTop();
+    setScrollState("close");
+    setTimeout(() => {
+      setcstate("open");
+
+      setTimeout(() => {
+        setTextStatus("open");
+      }, 1200); // open mask 後再等 0.2 秒
+    }, 1000);
+  };
+  // ------------------------------------------------------
+
+  useEffect(() => {
+    openpage();
+  }, []); //  只在初次渲染執行一次
+
+  // -------------------------------
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -106,19 +137,6 @@ const News = () => {
 
     return pages;
   };
-
-  // ------------------------------------------------------
-  const [textstatus, setTextStatus] = useState("close");
-
-  useEffect(() => {
-    // 組件載入後 1.5 秒執行
-    const timer = setTimeout(() => {
-      setTextStatus("open");
-    }, 500);
-
-    // 清除定時器（很重要！防止組件卸載後還執行）
-    return () => clearTimeout(timer);
-  }, []); // 空依賴 → 只在初次渲染執行一次
 
   return (
     <>

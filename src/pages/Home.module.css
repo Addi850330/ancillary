@@ -857,15 +857,18 @@
   width: 150px;
   height: 50px;
   position: absolute;
+  background-color: #2f6bff;
   left: 50%;
   bottom: -80px;
-  border: none;
   transform: translateX(-50%);
   border-radius: 30px;
   transition: 0.4s;
+  text-align: center;
   font-size: 1.1rem;
+  line-height: 50px;
   font-family: "Anta";
   cursor: pointer;
+  color: white;
 }
 .newst .newssbtn:hover {
   background-color: #2f6bff;

@@ -1,8 +1,38 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useSection } from "../context/Context";
 import styles from "./Solution.module.css";
 
 const Solution = () => {
+  const { setScrollState, cstate, setcstate } = useSection();
+
+  const [textstatus, setTextStatus] = useState("close");
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const openpage = () => {
+    scrollToTop();
+    setcstate("close");
+    setScrollState("close");
+    setTimeout(() => {
+      setcstate("open");
+
+      setTimeout(() => {
+        setTextStatus("open");
+      }, 1200); // open mask 後再等 0.2 秒
+    }, 1000);
+  };
+
+  useEffect(() => {
+    openpage();
+  }, []); //  只在初次渲染執行一次
+  // ------------------------------------------------------
+
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -44,28 +74,7 @@ const Solution = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
   // -------------------
-  const [textstatus, setTextStatus] = useState("close");
 
-  useEffect(() => {
-    // 組件載入後 1.5 秒執行
-    scrollToTop();
-    const timer = setTimeout(() => {
-      setTextStatus("open");
-    }, 500);
-
-    // 清除定時器
-    return () => clearTimeout(timer);
-  }, []); // 空依賴 → 只在初次渲染執行一次
-
-  // --------------------
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  // --------------
   const [activeSection, setActiveSection] = useState("");
   const planning = useRef(null);
   const pris = useRef(null);
@@ -82,7 +91,7 @@ const Solution = () => {
       },
       {
         root: null,
-        threshold: 0.35, // 進入 42% 視窗就算
+        threshold: 0.2, // 進入 42% 視窗就算
       }
     );
 
@@ -108,7 +117,7 @@ const Solution = () => {
         behavior: "smooth",
         block: "start",
       });
-    }, 1200);
+    }, 1000);
   };
 
   const screquirement = () => {
@@ -120,7 +129,7 @@ const Solution = () => {
         behavior: "smooth",
         block: "start",
       });
-    }, 1200);
+    }, 1000);
   };
 
   // --------------------------------------

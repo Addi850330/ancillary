@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { useSection } from "../context/Context";
 import styles from "./Home.module.css";
 const Home = () => {
@@ -8,12 +9,35 @@ const Home = () => {
     setScrollState,
     activeSection,
     setActiveSection,
+    cstate,
+    setcstate,
   } = useSection();
 
-  // useEffect(() => {
-  //   console.log(section);
-  // }, [section]);
+  const [textstatus, setTextStatus] = useState("close");
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const openpage = () => {
+    scrollToTop();
+    setcstate("close");
+    setTimeout(() => {
+      setcstate("open");
+
+      setTimeout(() => {
+        setTextStatus("open");
+      }, 1200); // open mask 後再等 0.2 秒
+    }, 1000);
+  };
+
+  useEffect(() => {
+    openpage();
+  }, []); //  只在初次渲染執行一次
+  // ------------------------------------------------------
   // ------------------
 
   useEffect(() => {
@@ -623,7 +647,13 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <button className={styles.newssbtn}>View more</button>
+        <Link
+          to={"/news"}
+          className={styles.newssbtn}
+          onClick={() => setcstate("close")}
+        >
+          View more
+        </Link>
       </section>
       <div
         className={styles.textanime}

@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useSection } from "../context/Context";
 import styles from "./Mask.module.css";
 
 const Mask = () => {
   const pathsRef = useRef([]);
-  const [cstate, setcstate] = useState("");
+  const { cstate, setcstate } = useSection();
 
   const open = () => {
     setcstate("open");
@@ -26,7 +27,7 @@ const Mask = () => {
 
       path.style.transition = `
       stroke-dashoffset 1s ease ${index * 0.05}s,
-      fill 0.6s ease ${1 + index * 0.05}s
+      fill 0.8s ease ${1 + index * 0.05}s
     `;
 
       path.style.strokeDashoffset = "0";
@@ -35,7 +36,7 @@ const Mask = () => {
         path.style.fill = "white";
       }, 1000 + index * 50);
     });
-  }, []);
+  }, [setcstate]);
 
   return (
     <div
