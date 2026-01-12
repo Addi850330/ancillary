@@ -1,9 +1,21 @@
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useSection } from "../context/Context";
 import styles from "./Solution.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Solution = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
+
   const { setScrollState, cstate, setcstate, solustate, setSolustate } =
     useSection();
 
@@ -321,7 +333,7 @@ const Solution = () => {
             </p>
           </div>
           <div className={styles.report}>
-            <div className={styles.cileft}>
+            <div className={styles.cileft} data-aos="fade-up">
               <div className={styles.leftimg}>
                 <img src="./images/solution/trade.png" alt="message" />
               </div>
@@ -329,7 +341,7 @@ const Solution = () => {
                 （圖片內容取自：台灣電力公司-輔助服務及備用容量交易平台）
               </div>
             </div>
-            <div className={styles.ciright}>
+            <div className={styles.ciright} data-aos="fade-up">
               <div className={styles.subtitle}>
                 調頻備轉容量<div className={styles.drbl}></div>
               </div>
@@ -352,7 +364,7 @@ const Solution = () => {
               </div>
             </div>
           </div>
-          <div className={styles.relist}>
+          <div className={styles.relist} data-aos="fade-up">
             <div className={styles.list}>
               <div className={styles.item}>產品項目</div>
               <div className={styles.time}>反應時間</div>
@@ -416,8 +428,12 @@ const Solution = () => {
             ref={planning}
             data-section="planning"
           >
-            <div className={styles.pristitle}>Planning & Execution</div>
-            <div className={styles.pristitlech}>安瑟樂威協助規劃流程</div>
+            <div className={styles.pristitle} data-aos="fade-up">
+              Planning & Execution
+            </div>
+            <div className={styles.pristitlech} data-aos="fade-up">
+              安瑟樂威協助規劃流程
+            </div>
             <div className={styles.scircle}>
               <div
                 className={`${styles.cc} ${
@@ -534,9 +550,13 @@ const Solution = () => {
             </div>
           </div>
           <div className={styles.pris}>
-            <div className={styles.pristitle}>FAQ</div>
-            <div className={styles.pristitlech}>常見問題</div>
-            <div className={styles.qas}>
+            <div className={styles.pristitle} data-aos="fade-up">
+              FAQ
+            </div>
+            <div className={styles.pristitlech} data-aos="fade-up">
+              常見問題
+            </div>
+            <div className={styles.qas} data-aos="fade-up">
               <div className={styles.qatitle} onClick={qatoggletw}>
                 Q. 誰適合參與？
                 <div className={styles.qaiocn}>
@@ -579,7 +599,7 @@ const Solution = () => {
       )}
       {sectionChange === "requirement" && (
         <section className={styles.requirement} ref={requirementRef}>
-          <div className={styles.companytitle}>
+          <div className={styles.companytitle} data-aos="fade-up">
             滿足用電大戶義務
             <br />
             及綠電交易需求
@@ -593,12 +613,12 @@ const Solution = () => {
               及綠電交易需求
             </span>
           </div>
-          <div className={styles.ctch}>
+          <div className={styles.ctch} data-aos="fade-up">
             <p className={`${textstatus === "open" ? styles.active : ""}`}>
               Requirement
             </p>
           </div>
-          <div className={styles.reqlist}>
+          <div className={styles.reqlist} data-aos="fade-up">
             <div className={styles.list}>
               <div className={styles.item}>產品項目</div>
               <div className={styles.time}>計算公式</div>
@@ -627,8 +647,12 @@ const Solution = () => {
             </div>
           </div>
           <div className={styles.planning} data-section="execution">
-            <div className={styles.pristitle}>Planning & Execution</div>
-            <div className={styles.pristitlech}>安瑟樂威協助規劃流程</div>
+            <div className={styles.pristitle} data-aos="fade-up">
+              Planning & Execution
+            </div>
+            <div className={styles.pristitlech} data-aos="fade-up">
+              安瑟樂威協助規劃流程
+            </div>
             <div className={styles.execution}>
               <div className={`${styles.excc} ${styles.active}`}>
                 <img src="./images/solution/s1.png" alt="bg" />
@@ -662,9 +686,13 @@ const Solution = () => {
             </div>
           </div>
           <div className={styles.pris}>
-            <div className={styles.pristitle}>FAQ</div>
-            <div className={styles.pristitlech}>常見問題</div>
-            <div className={styles.qas}>
+            <div className={styles.pristitle} data-aos="fade-up">
+              FAQ
+            </div>
+            <div className={styles.pristitlech} data-aos="fade-up">
+              常見問題
+            </div>
+            <div className={styles.qas} data-aos="fade-up">
               <div className={styles.qatitle} onClick={ratoggletw}>
                 Q. 誰適合參與？
                 <div className={styles.qaiocn}>
@@ -705,7 +733,15 @@ const Solution = () => {
         onMouseMove={handleMouseMovecc}
         onMouseLeave={handleMouseLeavecc}
       >
-        <div className={`${styles.textc} ${styles.txanime}`}>Contact Us</div>
+        <div
+          className={`${styles.textc} ${styles.txanime}`}
+          onClick={() => {
+            setcstate("close");
+            navigate("/contact");
+          }}
+        >
+          Contact Us
+        </div>
         <div
           className={styles.mousecircle}
           style={{

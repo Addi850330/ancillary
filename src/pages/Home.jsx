@@ -679,16 +679,12 @@ const Home = () => {
         className={styles.textanime}
         onMouseMove={handleMouseMovecc}
         onMouseLeave={handleMouseLeavecc}
+        onClick={() => {
+          setcstate("close");
+          navigate("/contact");
+        }}
       >
-        <div
-          className={`${styles.textc} ${styles.txanime}`}
-          onClick={() => {
-            setcstate("close");
-            navigate("/contact");
-          }}
-        >
-          Contact Us
-        </div>
+        <div className={`${styles.textc} ${styles.txanime}`}>Contact Us</div>
         <div
           className={styles.mousecircle}
           style={{

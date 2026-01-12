@@ -1,7 +1,19 @@
 import { useEffect, useState, useRef } from "react";
 import { useSection } from "../context/Context";
+import { useNavigate, Link } from "react-router-dom";
 import styles from "./About.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const About = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
   const { setScrollState, cstate, setcstate } = useSection();
 
   const [textstatus, setTextStatus] = useState("close");
@@ -254,14 +266,14 @@ const About = () => {
             </p>
           </div>
           <div className={styles.companyinfo}>
-            <div className={styles.cileft}>
+            <div className={styles.cileft} data-aos="fade-up">
               <div className={styles.citafter}>Message</div>
               <div className={styles.leftimg}>
                 <img src="./images/about/message.jpg" alt="message" />
               </div>
               <div className={styles.cibefor}>Message</div>
             </div>
-            <div className={styles.ciright}>
+            <div className={styles.ciright} data-aos="fade-up">
               <div className={styles.subtitle}>
                 安瑟樂威為國內首間民間電力合格交易者亦為可再生能源售電服務業者
               </div>
@@ -290,7 +302,7 @@ const About = () => {
             </p>
           </div>
           <div className={styles.teaminfo}>
-            <div className={styles.teamleft}>
+            <div className={styles.teamleft} data-aos="fade-up">
               <div className={styles.teamtitle}>
                 我們是國內最健全的輔助服務市場領銜專業團隊
               </div>
@@ -298,7 +310,7 @@ const About = () => {
                 集結國內產業界實務經驗豐富的專家，並與工業技術研究院、金屬工業研究中心和大同大學產學研合作，提供從用戶輔導、潛能評估、硬體設備、軟體平台建置、維運和可持續能源對策略調度的最佳化服務。亦具有儲能系統、可再生能源、智慧微電網設計、建置和維運的專業團隊，能提供參與輔助服務市場及綠電交易所有需求的一站式服務。
               </div>
             </div>
-            <div className={styles.teamright}>
+            <div className={styles.teamright} data-aos="fade-up">
               <div className={styles.textafter}>Elite Team</div>
               <div className={styles.teamimg}>
                 <img src="./images/about/Elite.jpg" alt="team" />
@@ -307,9 +319,13 @@ const About = () => {
             </div>
           </div>
           <div className={styles.pris}>
-            <div className={styles.pristitle}>Partner Institutions</div>
-            <div className={styles.pristitlech}>合作企業</div>
-            <div className={styles.prisimgs}>
+            <div className={styles.pristitle} data-aos="fade-up">
+              Partner Institutions
+            </div>
+            <div className={styles.pristitlech} data-aos="fade-up">
+              合作企業
+            </div>
+            <div className={styles.prisimgs} data-aos="fade-up">
               <div className={styles.pimg}>
                 <img src="./images/about/pri1.png" alt="pris" />
               </div>
@@ -343,22 +359,8 @@ const About = () => {
               里程碑
             </p>
           </div>
-          {/* <div className={styles.mitime}>
-            {data.map((item) => (
-              <div className={styles.milestoneset} key={item.new_ID}>
-                <div className={styles.year}>{item.year}</div>
-                <div className={styles.evens}>
-                  {item.milestone.map((m, index) => (
-                    <div className={styles.even} key={index}>
-                      <div className={styles.month}>{m.month}</div>
-                      <div className={styles.eveninfo}>{m.event}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div> */}
-          <div className={styles.mitime}>
+
+          <div className={styles.mitime} data-aos="fade-up">
             {data.map((item) => {
               const isOpen = openId === item.new_ID;
               return (
@@ -395,7 +397,15 @@ const About = () => {
         onMouseMove={handleMouseMovecc}
         onMouseLeave={handleMouseLeavecc}
       >
-        <div className={`${styles.textc} ${styles.txanime}`}>Contact Us</div>
+        <div
+          className={`${styles.textc} ${styles.txanime}`}
+          onClick={() => {
+            setcstate("close");
+            navigate("/contact");
+          }}
+        >
+          Contact Us
+        </div>
         <div
           className={styles.mousecircle}
           style={{
