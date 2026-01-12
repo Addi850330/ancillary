@@ -140,7 +140,11 @@ const Navbar = () => {
               ABOUT
             </div>
           </Link>
-          <Link to={"/contact"} className={styles.nl}>
+          <Link
+            to={"/contact"}
+            onClick={() => handleNavigate("/contact")}
+            className={styles.nl}
+          >
             <div className={styles.nltc}>
               <div
                 className={`${styles.nta} ${

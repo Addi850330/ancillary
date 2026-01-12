@@ -1,0 +1,164 @@
+.gbcliner {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  background: linear-gradient(
+    270deg,
+    rgba(78, 155, 240, 1) 0%,
+    rgba(86, 205, 234, 1) 45%,
+    rgba(84, 191, 236, 1) 72%,
+    rgba(77, 148, 241, 1) 100%
+  );
+}
+.wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+.background {
+  position: absolute;
+  background-color: rgba(92, 92, 92, 0);
+  inset: -40px; /* 關鍵：避免移動時露白邊 */
+  background-image: url("/images/bgc.png");
+  background-size: 10%;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+.wrapperm {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+.backgroundm {
+  position: absolute;
+  /* background-color: rgb(92, 92, 92); */
+  inset: -40px; /* 關鍵：避免移動時露白邊 */
+  background-image: url("/images/mask.png");
+  background-size: 10%;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+.contactlist {
+  padding: 80px 0px 0px 10%;
+  position: relative;
+}
+.contactlist .newtitle {
+  font-size: 70px;
+  position: relative;
+  width: 320px;
+  color: #2f6bff;
+}
+.contactlist .newtitle .fill {
+  position: absolute;
+  inset: 0;
+  color: rgba(230, 230, 230, 1);
+  clip-path: ellipse(0% 120% at 0% 50%);
+  transition: clip-path 1.2s ease;
+}
+.contactlist .newtitle .fill.active {
+  clip-path: ellipse(150% 120% at 100% 50%);
+}
+.contactlist .formlist {
+  width: 80%;
+  height: 100vh;
+  margin-top: 30px;
+}
+
+.contactlist .formlist form {
+  /* background-color: white; */
+  border-radius: 20px;
+  color: white;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+}
+.contactlist .formlist form label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 10px 50px 10px;
+  position: relative;
+}
+.contactlist .formlist form label p {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+}
+.contactlist .formlist form div {
+  font-size: 1.5rem;
+}
+.contactlist .formlist form input {
+  background-color: white;
+  border: none;
+  width: 60%;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+.contactlist .formlist form textarea {
+  background-color: white;
+  width: 60%;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+.contactlist .formlist form button {
+  width: 120px;
+  height: 50px;
+  border-radius: 25px;
+  color: white;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.contactlist .formlist form button:hover {
+  color: black;
+  background-color: white;
+}
+@media (max-width: 740px) {
+  .contactlist .formlist form div {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 623px) {
+  .contactlist .formlist {
+    width: 90%;
+  }
+}
+@media (max-width: 550px) {
+  .contactlist .formlist {
+    width: 100%;
+  }
+  .contactlist .formlist form input {
+    margin-right: 10px;
+  }
+  .contactlist .formlist form textarea {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 450px) {
+  .contactlist {
+    padding: 80px 0px 0px 10px;
+  }
+  .contactlist .formlist form div {
+    font-size: 1.1rem;
+    line-height: 40px;
+  }
+}

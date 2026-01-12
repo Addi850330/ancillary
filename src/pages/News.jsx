@@ -29,7 +29,7 @@ const News = () => {
 
   useEffect(() => {
     openpage();
-  }, []); //  只在初次渲染執行一次
+  }, []);
 
   // -------------------------------
   const [offset, setOffset] = useState({ x: 0, y: 0 });

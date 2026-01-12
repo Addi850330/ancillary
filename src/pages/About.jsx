@@ -21,13 +21,14 @@ const About = () => {
       setcstate("open");
       setTimeout(() => {
         setTextStatus("open");
-      }, 1200); // open mask 後再等 0.2 秒
+      }, 1200);
     }, 2000);
   };
 
   useEffect(() => {
     openpage();
-  }, []); //  只在初次渲染執行一次
+  }, []);
+
   // ------------------------------------------------------
 
   const [offset, setOffset] = useState({ x: 0, y: 0 });

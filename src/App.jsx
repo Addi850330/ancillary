@@ -4,7 +4,9 @@ import Home from "./pages/Home";
 import News from "./pages/News";
 import About from "./pages/About";
 import Solution from "./pages/Solution";
+import Contact from "./pages/Contact";
 import { SectionProvider } from "./context/Context";
+
 // import './App.css'
 
 function App() {
@@ -13,10 +15,11 @@ function App() {
       <SectionProvider>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<Home />} />{" "}
+            <Route index element={<Home />} />
             <Route path="/news" element={<News />} />
             <Route path="/solution" element={<Solution />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
           </Route>
         </Routes>
       </SectionProvider>
