@@ -8,6 +8,7 @@ export const SectionProvider = ({ children }) => {
   const [activeSection, setActiveSection] = useState("one");
   const [cstate, setcstate] = useState("close");
   const [solustate, setSolustate] = useState("");
+  const [acc, setAcc] = useState("close");
   return (
     <SectionContext.Provider
       value={{
@@ -21,6 +22,8 @@ export const SectionProvider = ({ children }) => {
         setcstate,
         solustate,
         setSolustate,
+        acc,
+        setAcc,
       }}
     >
       {children}

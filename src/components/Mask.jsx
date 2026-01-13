@@ -10,33 +10,71 @@ const Mask = () => {
     setcstate("open");
   };
 
-  useEffect(() => {
+  const draw = () => {
     const paths = document.querySelectorAll(`.${styles.mask} path`);
 
     paths.forEach((path, index) => {
       const length = path.getTotalLength();
 
+      // 🔄 重置狀態（關鍵）
+      path.style.transition = "none";
+      path.style.strokeDasharray = length;
+      path.style.strokeDashoffset = length;
       path.style.stroke = "white";
       path.style.strokeWidth = "1";
       path.style.fill = "transparent";
 
-      path.style.strokeDasharray = length;
-      path.style.strokeDashoffset = length;
-
+      // 強制重繪
       path.getBoundingClientRect();
 
+      // ▶️ 播放動畫
       path.style.transition = `
-      stroke-dashoffset 1s ease ${index * 0.05}s,
-      fill 0.8s ease ${1 + index * 0.05}s
+      stroke-dashoffset 0.8s ease ${index * 0.05}s,
+      fill 0.4s ease ${0.5 + index * 0.03}s
     `;
 
       path.style.strokeDashoffset = "0";
 
       setTimeout(() => {
         path.style.fill = "white";
-      }, 1000 + index * 50);
+      }, 500 + index * 50);
     });
-  }, [setcstate]);
+  };
+
+  useEffect(
+    () => {
+      // const paths = document.querySelectorAll(`.${styles.mask} path`);
+
+      // paths.forEach((path, index) => {
+      // const length = path.getTotalLength();
+
+      // path.style.stroke = "white";
+      // path.style.strokeWidth = "1";
+      // path.style.fill = "transparent";
+
+      // path.style.strokeDasharray = length;
+      // path.style.strokeDashoffset = length;
+
+      // path.getBoundingClientRect();
+
+      //   path.style.transition = `
+      //   stroke-dashoffset 1s ease ${index * 0.05}s,
+      //   fill 0.8s ease ${1 + index * 0.05}s
+      // `;
+
+      // path.style.strokeDashoffset = "0";
+
+      // setTimeout(() => {
+      //   path.style.fill = "white";
+      // }, 500 + index * 50);
+      // });
+      if (cstate === "close") {
+        draw();
+      }
+    },
+    [cstate]
+    // [setcstate]
+  );
 
   return (
     <div
@@ -68,7 +106,7 @@ const Mask = () => {
         width="195"
         height="30"
         viewBox="0 0 113 15"
-        fill="none"
+        fill="white"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

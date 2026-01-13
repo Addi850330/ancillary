@@ -12,6 +12,7 @@ const Navbar = () => {
     setScrollState,
     activeSection,
     setcstate,
+    setAcc,
   } = useSection();
 
   const navigate = useNavigate();
@@ -185,6 +186,7 @@ const Navbar = () => {
             className={`${styles.account} ${
               scrollState === "open" ? styles.active : ""
             } ${activeSection === "four" ? styles.blacks : ""}`}
+            onClick={() => setAcc("open")}
           >
             <button className={styles.acfalse}>
               <img

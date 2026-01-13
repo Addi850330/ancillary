@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSection } from "../context/Context";
 import styles from "./Contact.module.css";
 const Contact = () => {

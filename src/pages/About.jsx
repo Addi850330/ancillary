@@ -97,8 +97,8 @@ const About = () => {
 
   const scrollTo = (ref) => {
     ref.current?.scrollIntoView({
-      behavior: "smooth", // 平滑滾動
-      block: "start", // 對齊到頂部
+      behavior: "smooth", // 平滑
+      block: "start", // 到頂部
     });
   };
 

@@ -1,0 +1,81 @@
+.acconten {
+  width: 350px;
+  height: 450px;
+  position: fixed;
+  left: 150%;
+  transform: translateX(-50%);
+  top: 120px;
+  background-color: rgba(22, 22, 46, 0.633);
+  z-index: 9;
+  border-radius: 30px;
+  padding: 30px 25px;
+  box-sizing: border-box;
+  color: #fff;
+  transition: 0.5s;
+}
+.acconten.active {
+  left: 50%;
+}
+.clbtn {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+/* 切換按鈕 */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo div {
+  margin: 10px;
+}
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.tabs button {
+  width: 48%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+}
+
+.tabs .active {
+  background-color: #ffffff;
+  color: #000;
+  font-weight: bold;
+}
+
+/* 表單 */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form input {
+  height: 42px;
+  border-radius: 20px;
+  border: none;
+  padding: 0 15px;
+  outline: none;
+}
+
+.submit {
+  margin-top: 20px;
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  background-color: #4da3ff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}

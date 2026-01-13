@@ -50,8 +50,7 @@ const Home = () => {
     openpage();
   }, []); //  只在初次渲染執行一次
   // ------------------------------------------------------
-  // ------------------
-
+  // ---------偵測window top=0-----
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
@@ -99,6 +98,7 @@ const Home = () => {
     three: useRef(null),
     four: useRef(null),
   };
+  // 區域節點
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -111,7 +111,7 @@ const Home = () => {
       },
       {
         root: null,
-        threshold: 0.4, // 60% 進入視窗才算
+        threshold: 0.4,
       }
     );
 
@@ -120,6 +120,7 @@ const Home = () => {
     });
 
     return () => observer.disconnect();
+    // 元件卸載時移除監聽,避免 observer 持續存在造成效能或記憶體問題
   }, []);
 
   // useEffect(() => {
