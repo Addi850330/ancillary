@@ -27,7 +27,7 @@ const About = () => {
 
   const openpage = () => {
     scrollToTop();
-    setcstate("close");
+    // setcstate("close");
     setScrollState("close");
     setTimeout(() => {
       setcstate("open");

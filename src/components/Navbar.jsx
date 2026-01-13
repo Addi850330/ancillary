@@ -13,10 +13,20 @@ const Navbar = () => {
     activeSection,
     setcstate,
     setAcc,
+    setSolustate,
   } = useSection();
 
   const navigate = useNavigate();
   const location = useLocation(); // 取得當前路徑
+
+  const traset = () => {
+    setSolustate("tra");
+    setcstate("close");
+  };
+  const reqset = () => {
+    setSolustate("req");
+    setcstate("close");
+  };
 
   // 封裝通用跳轉邏輯
   const handleNavigate = (path) => {
@@ -240,7 +250,13 @@ const Navbar = () => {
             hidenav === "open" ? styles.active : ""
           }`}
         >
-          <div className={styles.hnl}>
+          <div
+            className={styles.hnl}
+            onClick={() => {
+              hidenavclose();
+              navigate("/news");
+            }}
+          >
             <div className={styles.hnle}>
               <div className={styles.htlet}>
                 <div>NEWS</div>
@@ -249,7 +265,13 @@ const Navbar = () => {
             </div>
             <p className={styles.hnlc}>最新消息</p>
           </div>
-          <div className={styles.hnl}>
+          <div
+            className={styles.hnl}
+            onClick={() => {
+              hidenavclose();
+              navigate("/solution");
+            }}
+          >
             <div className={styles.hnle}>
               <div className={styles.htlet}>
                 <div>SOLUTION</div>
@@ -259,17 +281,40 @@ const Navbar = () => {
             <p className={styles.hnlc}>解決方案</p>
           </div>
           <div className={styles.hnlot}>
-            <div className={styles.otlink}>
+            <div
+              className={styles.otlink}
+              onClick={() => {
+                hidenavclose();
+                navigate("/solution");
+              }}
+            >
               <span>- </span>參與電力交易平台
             </div>
-            <div className={styles.otlink}>
+            <div
+              className={styles.otlink}
+              onClick={() => {
+                hidenavclose();
+                navigate("/solution");
+              }}
+            >
               <span>- </span>滿足用電大戶義務及綠電交易需求
             </div>
-            <div className={styles.otlink}>
+            <div
+              className={styles.otlink}
+              onClick={() => {
+                navigate("https://www.ancillarypower.com/service-entrance/");
+              }}
+            >
               <span>- </span>輔助服務試算器
             </div>
           </div>
-          <div className={styles.hnl}>
+          <div
+            className={styles.hnl}
+            onClick={() => {
+              hidenavclose();
+              navigate("/about");
+            }}
+          >
             <div className={styles.hnle}>
               <div className={styles.htlet}>
                 <div>ABOUT</div>
@@ -278,7 +323,13 @@ const Navbar = () => {
             </div>
             <p className={styles.hnlc}>關於我們</p>
           </div>
-          <div className={styles.hnl}>
+          <div
+            className={styles.hnl}
+            onClick={() => {
+              hidenavclose();
+              navigate("/contact");
+            }}
+          >
             <div className={styles.hnle}>
               <div className={styles.htlet}>
                 <div>CONTACT</div>

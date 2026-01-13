@@ -30,7 +30,7 @@ const Solution = () => {
 
   const openpage = () => {
     scrollToTop();
-    setcstate("close");
+    // setcstate("close");
     setScrollState("close");
     if (solustate === "tra") {
       sctrade();
