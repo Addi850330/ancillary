@@ -255,6 +255,7 @@ const Navbar = () => {
             onClick={() => {
               hidenavclose();
               navigate("/news");
+              handleNavigate("/news");
             }}
           >
             <div className={styles.hnle}>
@@ -270,6 +271,7 @@ const Navbar = () => {
             onClick={() => {
               hidenavclose();
               navigate("/solution");
+              handleNavigate("/solution");
             }}
           >
             <div className={styles.hnle}>
@@ -286,6 +288,7 @@ const Navbar = () => {
               onClick={() => {
                 hidenavclose();
                 navigate("/solution");
+                handleNavigate("/solution");
               }}
             >
               <span>- </span>參與電力交易平台
@@ -295,6 +298,7 @@ const Navbar = () => {
               onClick={() => {
                 hidenavclose();
                 navigate("/solution");
+                handleNavigate("/solution");
               }}
             >
               <span>- </span>滿足用電大戶義務及綠電交易需求
@@ -313,6 +317,7 @@ const Navbar = () => {
             onClick={() => {
               hidenavclose();
               navigate("/about");
+              handleNavigate("/about");
             }}
           >
             <div className={styles.hnle}>
@@ -328,6 +333,7 @@ const Navbar = () => {
             onClick={() => {
               hidenavclose();
               navigate("/contact");
+              handleNavigate("/contact");
             }}
           >
             <div className={styles.hnle}>
